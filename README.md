@@ -31,6 +31,9 @@ Seguimos dos páginas muy útiles para la documentación
   - Si la versión de React Native cambia debe actualizar las dependencias dentro del folder _iOS_
     - cd `ios` y correr `pod install`
 
+
+Cualquier duda de la documentación o mejora puede ser añadido.
+
 ### Build/CLI
 
 TODO: Añadir más pasos
