@@ -13,7 +13,7 @@ El setup inicial con las versiones que el proyecto está iniciando puede ser vis
 
 | Node| React Native| Android Studio | Xcode |
 | ---- | --- | --- | ---|
-| v16.04.0 | 0.66.4 | 3.6.2 | Version 13(13A1030d) |
+| v16.04.0 | 0.66.4 | >= 3.6.2 | Version 13(13A1030d) |
 
 
 ## Documentación
