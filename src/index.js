@@ -12,7 +12,6 @@ import React, { Component } from 'react';
 import Home from './components/Home/Home.component';
 import Navigation from './components/Navigation';
 import { AuthProvider } from './context/AuthContext';
-import 'react-native-gesture-handler';
 
 class CondominiosApp extends Component {
   render() {
