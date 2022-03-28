@@ -3,14 +3,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from '../context/AuthContext';
 import LoginStackScreen from './LoginStackScreen';
 import TabNavigator from './TabNavigator';
+import MycondosScreen from '../screens/user/MyCondosScreen';
 
 
 const Navigation = () => {
-  const {userInfo} = useContext(AuthContext);
+  const {userInfo,condoInfo} = useContext(AuthContext);
   return (
     <NavigationContainer>
       {userInfo.access_token ? (
-        <TabNavigator/>
+        <>
+          {condoInfo.id ? (<TabNavigator/>):(<MycondosScreen/>)}
+        </>
+        
       ) : (
         <LoginStackScreen/>
       )}              

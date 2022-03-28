@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
   const [userInfo, setUserInfo] = useState({});
+  const [condoInfo, setCondoInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
    const register = (userName, email, pass) => {
@@ -63,6 +64,14 @@ export const AuthProvider = ({children}) => {
       });     
    }
 
+   const openCondo = () => {
+      const condoInfo = {id:10, name:'Green tower'}
+      setIsLoading(true);
+      setCondoInfo(condoInfo);
+      AsyncStorage.setItem('condoInfo', JSON.stringify(condoInfo));
+      setIsLoading(false);
+   }
+
    const listRoles = () => {
       var options = {
          method: 'GET',
@@ -94,6 +103,7 @@ export const AuthProvider = ({children}) => {
          console.log(res.data);
          AsyncStorage.removeItem('userInfo');
          setUserInfo({});
+         setCondoInfo({});
          setIsLoading(false);
       })
       .catch(e => {
@@ -108,9 +118,11 @@ export const AuthProvider = ({children}) => {
          value={{
             isLoading,
             userInfo,
+            condoInfo,
             register,
             login,
-            logout
+            logout,
+            openCondo
           }}>
          {children}
       </AuthContext.Provider> 

@@ -1,14 +1,16 @@
 import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import MyCondosScreen from "../screens/user/MyCondosScreen";
+import MyCondosScreen from "../screens/user/MyCondoScreen";
+import Properties from '../screens/user/Properties';
 
-const LoginStack = createNativeStackNavigator();
+const MyCondos = createNativeStackNavigator();
 
 const  MyCondosStackScreen = () => {
   return (
-    <LoginStack.Navigator> 
-      <LoginStack.Screen name="Mis Condominios Stack" component={MyCondosScreen} />            
-    </LoginStack.Navigator>
+    <MyCondos.Navigator> 
+      <MyCondos.Screen name="CondosStackScreen" component={MyCondosScreen} />
+      <MyCondos.Screen name="PropertiesStackScreen" component={Properties} />            
+    </MyCondos.Navigator>
   );
 }
 

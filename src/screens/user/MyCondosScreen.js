@@ -1,12 +1,31 @@
-import React from 'react';
-import {View, Text} from "react-native";
+import React, {useContext} from 'react';
+import {Button, View, Text, TextInput} from "react-native";
+import { AuthContext } from "../../context/AuthContext";
 
-const MycondosScreen = () => {
+const MycondosScreen = ({navigation}) => {
+  const {userInfo, isLoading, logout, openCondo} = useContext(AuthContext);
   return (
     <View>
+      <Button
+        title = "Logout"
+        color="red"
+        onPress={logout} 
+      />
       <Text>
-        Mycondos
+        Agregar condominio
       </Text>
+      <TextInput
+        placeholder='Agregar código de condominio'
+      />
+      <Text>
+        Mis Condominios
+      </Text>
+      <Button 
+        title = "Abrir condominio"
+        onPress={() => {
+          openCondo()
+        }}
+      />
     </View>
   );
 }
