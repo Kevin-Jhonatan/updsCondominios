@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 // Import theme variables.
 import theme from './theme.style';
@@ -6,17 +6,16 @@ import theme from './theme.style';
 export default StyleSheet.create({
   btn: {
     padding: 10,
-    borderWidth: 1
+    borderWidth: 1,
   },
   input: {
-    marginBottom: 12,
-    borderWidth: 1,
-    borderColor:'#bbb',
-    borderRadius: 5,
-    paddingHorizontal: 14,
-    paddingVertical: 14
+    marginBottom: 15,
+    borderColor: '#5A66DF',
+    textAlign: 'center',
+    color: '#5A66DF',
+    borderBottomWidth: 1,
   },
   link: {
     color: theme.PRIMARY_COLOR,
-  }
+  },
 });
