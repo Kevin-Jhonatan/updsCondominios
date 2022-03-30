@@ -4,6 +4,10 @@ import {View, Text, TextInput, Button, TouchableOpacity, StyleSheet} from "react
 import { AuthContext } from "../../context/AuthContext";
 import { ActivityIndicator } from "react-native";
 
+// Import style for this component.
+// Keep 'styles' name because that helps to understand what we are doing.
+import styles from '../../styles/screens/user/LoginScreen.component.style'
+
 const LoginScreen = ({navigation}) => {
     const [userName, setUserName] = useState(null);
     const [password, setPassword] = useState(null);
@@ -26,6 +30,7 @@ const LoginScreen = ({navigation}) => {
                     onChangeText={text => setPassword(text)}
                 />
                 <Button 
+                    style={[styles.secondBtn]}
                     title="Login"
                     onPress={() => {
                         login(userName, password)
@@ -43,28 +48,5 @@ const LoginScreen = ({navigation}) => {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    wrapper: {
-        width: '80%'
-    },
-    input: {
-        marginBottom: 12,
-        borderWidth: 1,
-        borderColor:'#bbb',
-        borderRadius: 5,
-        paddingHorizontal: 14
-    },
-    link: {
-        color: 'blue',
-    }
-});
-
-
 
 export default LoginScreen;
