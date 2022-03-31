@@ -25,5 +25,15 @@ export default StyleSheet.create({
   },
   link: {
     ...common.link,
+  },
+  logoLogin:{
+    marginTop: 60,
+    marginBottom: 60,
+    width: '80%'
+  },
+  text:{
+    color: '#5A66DF',
+    textAlign: 'center',
+    fontSize: 20
   }
 });
