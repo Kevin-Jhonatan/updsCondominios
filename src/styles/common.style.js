@@ -16,6 +16,6 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
   },
   link: {
-    color: theme.PRIMARY_COLOR,
+    color: theme.BTN_BACKGROUND,
   },
 });
