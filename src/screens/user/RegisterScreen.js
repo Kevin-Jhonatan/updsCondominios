@@ -7,14 +7,13 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
-  Alert,
   Modal,
-  Pressable,
 } from 'react-native';
 import {AuthContext} from '../../context/AuthContext';
 import {ActivityIndicator} from 'react-native';
 import styles from '../../styles/screens/user/RegisterScreen.component.style';
 import theme from '../../styles/theme.style';
+import Back from '../../assets/icons/register/Icon_back.svg';
 
 const RegisterScreen = ({navigation}) => {
   const [email, setEmail] = useState(null);
@@ -24,7 +23,7 @@ const RegisterScreen = ({navigation}) => {
   /**
    * Modal Register for Rol
    */
-  const [modalVisible, setModalVisible] = useState(false);
+  const [state, setView] = useState(false);
 
   return (
     <ScrollView>
@@ -54,20 +53,27 @@ const RegisterScreen = ({navigation}) => {
           />
           <Modal
             animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert('Modal has been closed.');
-              setModalVisible(!modalVisible);
-            }}
-          />
-          <TextInput
-            placeholder="Rol"
-            style={styles.input}
-            value={userName}
-            onChangeText={text => setUserName(text)}
-            placeholderTextColor={theme.COLOR_FONT_PLACEHOLDER}
-          />
+            onDismiss={() => console.log('close')}
+            onShow={() => console.log('show')}
+            visible={state}
+            setView={state}>
+            <TouchableOpacity
+              style={{
+                height: '10%',
+                width: '10%',
+                backgroundColor: 'red',
+              }}
+              onPress={() => {
+                setView(false);
+              }}>
+              <Text>Hola</Text>
+            </TouchableOpacity>
+          </Modal>
+          <TouchableOpacity
+            style={styles.rolInput}
+            onPress={() => setView(true)}>
+            <Text style={styles.colorTitleRol}>Rol</Text>
+          </TouchableOpacity>
           <TextInput
             placeholder="Correo electrónico"
             style={styles.input}
@@ -99,14 +105,6 @@ const RegisterScreen = ({navigation}) => {
             }}
             color={theme.SECONDARY_COLOR}
           />
-          <TouchableOpacity
-            style={styles.roundButton1}
-            onPress={() => {
-              register(userName, email, password);
-              navigation.navigate('Login');
-            }}>
-            <Text>I'm a button</Text>
-          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>

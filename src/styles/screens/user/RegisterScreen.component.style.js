@@ -13,6 +13,9 @@ export default StyleSheet.create({
   wrapper: {
     width: '80%',
   },
+  link: {
+    color: 'blue',
+  },
   input: {
     marginBottom: 15,
     borderColor: '#5A66DF',
@@ -20,10 +23,15 @@ export default StyleSheet.create({
     color: '#5A66DF',
     borderBottomWidth: 1,
   },
-  link: {
-    color: 'blue',
+  colorTitleRol: {
+    color: '#5A66DF',
+    textAlign: 'center',
   },
-  btn: {
-    borderRadius: 20,
+  rolInput: {
+    marginBottom: 15,
+    borderColor: '#5A66DF',
+    textAlign: 'center',
+    color: '#5A66DF',
+    borderBottomWidth: 1,
   },
 });
