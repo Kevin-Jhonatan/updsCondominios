@@ -18,4 +18,16 @@ export default StyleSheet.create({
   link: {
     color: theme.BTN_BACKGROUND,
   },
+  containerBtn: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: theme.BTN_BACKGROUND,
+    padding: 10,
+    borderRadius: 20,
+    height: 50,
+  },
+  titleBtn: {
+    textAlign: 'center',
+    color: theme.PRIMARY_COLOR,
+  },
 });
