@@ -25,6 +25,7 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: 20,
     height: 50,
+    marginTop: 15,
   },
   titleBtn: {
     textAlign: 'center',

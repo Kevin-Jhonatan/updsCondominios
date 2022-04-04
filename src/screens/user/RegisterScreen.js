@@ -84,11 +84,10 @@ const RegisterScreen = ({navigation}) => {
               onPress={() => {
                 setView(false);
               }}>
-              <Back />
+              <Back style={styles.iconBack} />
             </TouchableOpacity>
-            <Text>Elegir Rol</Text>
+            <Text style={styles.titleModal}>Elegir rol</Text>
           </Modal>
-
           <View style={styles.containerInput}>
             <TouchableOpacity
               style={styles.input}
@@ -99,7 +98,6 @@ const RegisterScreen = ({navigation}) => {
               </Text>
             </TouchableOpacity>
           </View>
-
           <View style={styles.containerInput}>
             <TextInput
               placeholder="Correo electrónico"

@@ -37,9 +37,6 @@ export default StyleSheet.create({
     width: '12%',
     top: 10,
   },
-  iconRol: {
-    width: '12%',
-  },
   containerBtn: {
     ...common.containerBtn,
   },
@@ -51,6 +48,7 @@ export default StyleSheet.create({
     height: 'auto',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 15,
   },
   image: {
     width: 100,
@@ -63,5 +61,17 @@ export default StyleSheet.create({
   },
   scrollView: {
     backgroundColor: '#E8EAF5',
+  },
+  titleModal: {
+    color: '#5A66DF',
+    textAlign: 'center',
+    fontSize: 20,
+    top: -10,
+  },
+  iconBack: {
+    top: 10,
+    left: 10,
+    width: 50,
+    height: 50,
   },
 });
