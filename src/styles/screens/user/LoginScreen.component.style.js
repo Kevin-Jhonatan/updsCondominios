@@ -6,11 +6,9 @@ import common from '../../common.style';
 export default StyleSheet.create({
   firstBtn:{
     ...common.btn,
-    backgroundColor: 'blue'
   },
   secondBtn:{
     ...common.btn,
-    backgroundColor: 'red'
   },
   container: {
     flex: 1,
@@ -18,22 +16,64 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   wrapper: {
-    width: '80%'
+    width: '70%',
+  },
+  scrollView: {
+    backgroundColor: '#E8EAF5',
   },
   input: {
     ...common.input,
+    marginBottom: 40,
+    paddingBottom: 5
   },
   link: {
     ...common.link,
+    fontWeight: '500',
+    textDecorationLine: 'underline'
   },
   logoLogin:{
-    marginTop: 60,
+    marginTop: 10,
     marginBottom: 60,
-    width: '80%'
+    width: '80%',
   },
-  text:{
+  smallText:{
     color: '#5A66DF',
-    textAlign: 'center',
-    fontSize: 20
+  },
+  containerBtn: {
+    ...common.containerBtn,
+  },
+  titleBtn: {
+    ...common.titleBtn,
+  },
+  h1: {
+    ...common.h1,
+  },
+  h2: {
+    ...common.h2,
+  },
+  h3: {
+    ...common.h3,
+  },
+  h4: {
+    ...common.h4,
+  },
+  logoContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerPassword: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerRegister: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });

@@ -6,11 +6,11 @@ import { AuthContext } from "../context/AuthContext";
 const HomeScreen = () => {
   const {userInfo, isLoading, logout} = useContext(AuthContext);
   return (
-     <View style={styles.container}>
-        <ActivityIndicator size="large" color="#00ff00" animating={isLoading}/>
-         <Text style={styles.welcome}>Welcome {userInfo.current_user.name}</Text>
-         <Button title="Logout" color="red" onPress={logout}/>
-     </View> 
+    <View style={styles.container}>
+      <ActivityIndicator size="large" color="#00ff00" animating={isLoading}/>
+      <Text style={styles.welcome}>Welcome {userInfo.current_user.name}</Text>
+      <Button title="Logout" color="red" onPress={logout}/>
+    </View> 
   );
 }
 
