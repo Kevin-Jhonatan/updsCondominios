@@ -16,6 +16,19 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
   },
   link: {
+    color: theme.BTN_BACKGROUND,
+  },
+  containerBtn: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: theme.BTN_BACKGROUND,
+    padding: 10,
+    borderRadius: 20,
+    height: 50,
+    marginTop: 15,
+  },
+  titleBtn: {
+    textAlign: 'center',
     color: theme.PRIMARY_COLOR,
   },
 });

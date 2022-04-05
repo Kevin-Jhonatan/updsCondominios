@@ -8,22 +8,70 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E8EAF5',
   },
   wrapper: {
     width: '80%',
   },
-  input: {
+  link: {
+    color: 'blue',
+  },
+  colorTitleRol: {
+    width: '88%',
+    color: '#5A66DF',
+    textAlign: 'center',
+  },
+  containerInput: {
+    display: 'flex',
+    flexDirection: 'row',
     marginBottom: 15,
     borderColor: '#5A66DF',
     textAlign: 'center',
     color: '#5A66DF',
     borderBottomWidth: 1,
   },
-  link: {
-    color: 'blue',
+  input: {
+    width: '88%',
+    textAlign: 'center',
   },
-  btn: {
-    borderRadius: 20,
+  icon: {
+    width: '12%',
+    top: 10,
+  },
+  containerBtn: {
+    ...common.containerBtn,
+  },
+  titleBtn: {
+    ...common.titleBtn,
+  },
+  profile: {
+    width: '100%',
+    height: 'auto',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+  },
+  iconAdd: {
+    position: 'absolute',
+    zIndex: 1,
+  },
+  scrollView: {
+    backgroundColor: '#E8EAF5',
+  },
+  titleModal: {
+    color: '#5A66DF',
+    textAlign: 'center',
+    fontSize: 20,
+    top: -10,
+  },
+  iconBack: {
+    top: 10,
+    left: 10,
+    width: 50,
+    height: 50,
   },
 });
