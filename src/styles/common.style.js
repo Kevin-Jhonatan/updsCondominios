@@ -68,4 +68,8 @@ export default StyleSheet.create({
     borderTopWidth: 2,
     height: '10%',
   },
+  tabBarIconStyle: {
+    borderRadius: 20,
+    margin: '2%',
+  },
 });

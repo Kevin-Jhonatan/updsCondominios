@@ -6,11 +6,21 @@ import PerfilStackScreen from './PerfilStackScreen';
 import Profile from '../assets/icons/home/profile';
 import Condo from '../assets/icons/home/my_condos';
 import Home from '../assets/icons/home/home';
-import screenOptions from '../styles/common.style';
+import common from '../styles/common.style';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
+  const screenOptions = {
+    headerShown: false,
+    tabBarStyle: {
+      ...common.tabBarStyle,
+    },
+    tabBarItemStyle: {
+      ...common.tabBarIconStyle,
+    },
+  };
+
   return (
     <Tab.Navigator {...{screenOptions}}>
       <Tab.Screen

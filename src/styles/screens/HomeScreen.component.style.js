@@ -62,7 +62,4 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: '5%',
   },
-  tabBarStyle: {
-    ...common.screenOptions,
-  },
 });
