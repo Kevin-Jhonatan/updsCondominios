@@ -55,4 +55,21 @@ export default StyleSheet.create({
     fontWeight: '300',
     fontSize: 20,
   },
+  /* Styte container tab-navigator */
+  tabBarStyle: {
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    backgroundColor: theme.PRIMARY_COLOR,
+    borderTopColor: theme.SECONDARY_COLOR,
+    borderRightColor: theme.SECONDARY_COLOR,
+    borderLeftColor: theme.SECONDARY_COLOR,
+    borderBottomColor: theme.SECONDARY_COLOR,
+    borderWidth: 2,
+    borderTopWidth: 2,
+    height: '10%',
+  },
+  tabBarIconStyle: {
+    borderRadius: 20,
+    margin: '2%',
+  },
 });
