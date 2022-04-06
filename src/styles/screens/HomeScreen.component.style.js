@@ -20,6 +20,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     height: '15%',
+    marginTop: '5%',
   },
   iconLogout: {
     marginLeft: '5%',
@@ -60,5 +61,8 @@ export default StyleSheet.create({
     borderRadius: 20,
     alignItems: 'center',
     padding: '5%',
+  },
+  tabBarStyle: {
+    ...common.screenOptions,
   },
 });

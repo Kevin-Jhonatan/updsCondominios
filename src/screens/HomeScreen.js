@@ -16,10 +16,10 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.welcome}>Condominios {userInfo.current_user.name}</Text> */}
-
       <View style={styles.header}>
         <TouchableOpacity onPress={logout} style={styles.iconLogout}>
           <Logout style={styles.icon} />
+          <Text style={styles.titleCard}>Salir</Text>
         </TouchableOpacity>
         <View style={styles.containerTitle}>
           <Text style={styles.title}>Condominios</Text>
@@ -27,7 +27,6 @@ const HomeScreen = () => {
         </View>
         <Notification style={styles.iconNotification} />
       </View>
-
       <View style={styles.containerCard}>
         <View style={styles.card}>
           <TouchableOpacity>
@@ -56,7 +55,7 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <ActivityIndicator size="large" color="#00ff00" animating={isLoading} />
+      <ActivityIndicator size="large" color="#5A66DF" animating={isLoading} />
     </View>
   );
 };
