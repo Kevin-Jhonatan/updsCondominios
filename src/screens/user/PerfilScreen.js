@@ -5,12 +5,14 @@ import Profile from '../../assets/icons/profile/profile-circled';
 import Condo from '../../assets/icons/home/my_condos';
 import Logout from '../../assets/icons/home/logout';
 import Logotype from '../../assets/icons/login/logo';
+import Back from '../../assets/icons/register/Icon_back';
 import styles from '../../styles/screens/user/PerfilScreen.component.style';
 
 const PerfilScreen = () => {
   const {userInfo, isLoading, logout} = useContext(AuthContext);
   return (
     <View>
+      <Back />
       <Text>Condominios</Text>
       <View style={styles.containerCard}>
         <View style={styles.card}>
