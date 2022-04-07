@@ -13,6 +13,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   const screenOptions = {
     headerShown: false,
+    tabBarActiveTintColor: '#5A66DF',
     tabBarStyle: {
       ...common.tabBarStyle,
     },
@@ -29,10 +30,11 @@ const TabNavigation = () => {
         activeColor="red"
         options={{
           tabBarIcon: () => <Home />,
+          tabBarInactiveTintColor: '#363947',
         }}
       />
       <Tab.Screen
-        name="Mis condominios"
+        name="Mi condominio"
         component={MyCondosStackScreen}
         options={{
           tabBarIcon: () => <Condo />,
