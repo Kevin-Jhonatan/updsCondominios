@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
   const [userInfo, setUserInfo] = useState({});
+  const [userCondominiums, setUserCondominiums] = useState({}); 
   const [condoInfo, setCondoInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -113,16 +114,73 @@ export const AuthProvider = ({children}) => {
 
       );
    }
+
+   const associateUserCondominium = (code) => {
+      setIsLoading(true);
+       const associateData = {userId:userInfo.current_user.uid, codeCondominium:code}
+       const headers = {
+         'Content-type' : `application/json`, 
+         'Authorization': `Bearer ${userInfo.access_token}`,
+         'X-CSRF-Token' : `${userInfo.csrf_token}`
+
+       }
+       axios.post(`${BASE_URL}api/association-user-condominium?_format=json`, associateData, {headers})
+       .then(response => { 
+         let associateInfo = response.data;
+         console.log(`Informacion de la asociacion ${JSON.stringify(associateInfo)}`);
+         setIsLoading(false);
+         
+      })
+      .catch(function (error) {
+         
+         if (error.response) {
+            // The request was made, but the server responded with a status code
+            // that falls out of the range of 2xx
+            console.log(`data ${JSON.stringify(error.response.data)}`);
+            console.log(`status ${error.response.status}`);
+            console.log(`headers ${JSON.stringify(error.response.headers)}`);
+         } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log('Error', error.message);
+         }
+         setIsLoading(false);
+         console.log(error.config);
+      });  
+   }
+
+   const myCondominiums = () => {
+      var options = {
+         method: 'GET',
+         url: `${BASE_URL}api/my-condominiums/${userInfo.current_user.uid}`,
+         headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${userInfo.access_token}`,
+            'X-CSRF-Token' : `${userInfo.csrf_token}`
+         }
+       };
+      
+      axios.request(options)
+      .then(function (response) {
+         console.log(response.data);
+         setUserCondominiums(response.data);
+      }).catch(function (error) {
+         console.log(error);
+         console.log(`message ${JSON.stringify(error)}`);
+      });
+   }
    return (
       <AuthContext.Provider 
          value={{
             isLoading,
             userInfo,
             condoInfo,
+            userCondominiums,
             register,
             login,
             logout,
-            openCondo
+            openCondo,
+            associateUserCondominium,
+            myCondominiums
           }}>
          {children}
       </AuthContext.Provider> 
