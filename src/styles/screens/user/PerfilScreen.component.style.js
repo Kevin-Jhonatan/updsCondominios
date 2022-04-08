@@ -18,6 +18,7 @@ export default StyleSheet.create({
   containerCard: {
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: '-6%',
   },
   card: {
     width: 150,
@@ -35,11 +36,5 @@ export default StyleSheet.create({
     fontSize: 14,
     fontFamily: theme.FONTFAMILY,
     margin: '2%',
-  },
-  iconBack: {
-    top: 10,
-    left: 10,
-    width: 50,
-    height: 50,
   },
 });

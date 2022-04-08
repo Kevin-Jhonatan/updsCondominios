@@ -11,7 +11,7 @@ import AreaCommon from '../assets/icons/home/areas-comunes';
 import Document from '../assets/icons/home/docs';
 import styles from '../styles/screens/HomeScreen.component.style';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const {userInfo, isLoading, logout} = useContext(AuthContext);
   return (
     <View style={styles.container}>
@@ -49,7 +49,7 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.cardTwo}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Document')}>
             <Document />
             <Text style={styles.titleCard}>Documentos</Text>
           </TouchableOpacity>
