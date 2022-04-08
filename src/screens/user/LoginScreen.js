@@ -29,6 +29,7 @@ const LoginScreen = ({navigation}) => {
         </View>
         <View style={styles.wrapper}>
           <TextInput
+            autoCapitalize="none"
             placeholder="Usuario"
             style={styles.input}
             value={userName}

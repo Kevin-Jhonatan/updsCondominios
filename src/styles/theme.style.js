@@ -12,5 +12,5 @@ export default {
   CONTAINER_PADDING: 20,
   BTN_BACKGROUND: '#5A66DF',
   COLOR_FONT_PLACEHOLDER: '#5A66DF',
-  FONTFAMILY: 'Manrope',
+  //FONTFAMILY: 'Manrope',
 };

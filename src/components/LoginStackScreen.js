@@ -7,7 +7,7 @@ const LoginStack = createNativeStackNavigator();
 
 const  LoginStackScreen = () => {
   return (
-    <LoginStack.Navigator> 
+    <LoginStack.Navigator screenOptions={{headerShown: false}}> 
       <LoginStack.Screen name="Login" component={LoginScreen} />
       <LoginStack.Screen name="Register" component={RegisterScreen}/>              
     </LoginStack.Navigator>
