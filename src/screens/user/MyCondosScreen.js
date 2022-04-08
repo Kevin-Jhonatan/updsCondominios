@@ -201,6 +201,9 @@ const MycondosScreen = ({navigation}) => {
             <TouchableOpacity
               style={[styles.containerBtn]}
               title="Abrir condominio"
+              onPress={() => {
+                openCondo()
+              }}
               >
               <Text style={[styles.titleBtn]}>
                 Abrir condominio
