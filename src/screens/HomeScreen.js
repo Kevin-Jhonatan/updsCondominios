@@ -43,7 +43,7 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.containerCard}>
         <View style={styles.card}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
             <AreaCommon />
             <Text style={styles.titleCard}>Área común</Text>
           </TouchableOpacity>
