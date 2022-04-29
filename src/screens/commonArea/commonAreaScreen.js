@@ -14,7 +14,7 @@ import SwimmingPool from '../../assets/icons/commonArea/piscina';
 import SalonOfEvent from '../../assets/icons/commonArea/salon_eventos';
 
 const CommonAreaScreen = ({navigation}) => {
-  const CommonArea = [
+  const DATA = [
     {
       id: '1',
       title: 'Churrasquera',
@@ -25,13 +25,40 @@ const CommonAreaScreen = ({navigation}) => {
       title: 'Piscina',
       icon: '../../assets/icons/commonArea/piscina.svg',
     },
+    {
+      id: '3',
+      title: 'Salon de eventos',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
+    {
+      id: '4',
+      title: 'Churrasquera',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
+    {
+      id: '5',
+      title: 'Piscina',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
   ];
-  const OpenCommonArea = ({title, action}) => {
+  const OpenCommonArea = ({id, title}) => {
     return (
       <View style={styles.containerCard}>
-        <TouchableOpacity onPress={action}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('CommonAreaReserveList', {
+              id: id,
+              title: title,
+            })
+          }>
           <View style={styles.card}>
-            <Barbecue />
+            {title === 'Churrasquera' ? (
+              <Barbecue />
+            ) : title === 'Piscina' ? (
+              <SwimmingPool />
+            ) : title === 'Salon de eventos' ? (
+              <SalonOfEvent />
+            ) : null}
             <Text style={styles.titleCard}>{title}</Text>
           </View>
         </TouchableOpacity>
@@ -48,12 +75,9 @@ const CommonAreaScreen = ({navigation}) => {
         <Logo />
       </View>
       <FlatList
-        data={CommonArea}
-        renderItem={({item, index}) => (
-          <OpenCommonArea
-            title={item.title}
-            action={() => console.log(item.title)}
-          />
+        data={DATA}
+        renderItem={({item}) => (
+          <OpenCommonArea id={item.id} title={item.title} />
         )}
       />
     </View>

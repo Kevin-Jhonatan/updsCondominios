@@ -16,20 +16,19 @@ import SwimmingPool from '../../assets/icons/commonArea/piscina';
 import SalonOfEvent from '../../assets/icons/commonArea/salon_eventos';
 
 const CommonAreaReserveScreen = ({route, navigation}) => {
-  React.useEffect(() => {
-    const {title} = route.params;
-    Alert.alert('Parametro de navegacion', title);
-  });
+  const {id} = route.params;
+  const {title} = route.params;
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
           <Back style={styles.back} />
         </TouchableOpacity>
-        <Text style={styles.title}>CommonArea</Text>
-        <View style={styles.containerLogo}>
-          <Logo />
-        </View>
+        <Text style={styles.title}>
+          {title}
+          {id}
+        </Text>
       </View>
     </SafeAreaView>
   );
