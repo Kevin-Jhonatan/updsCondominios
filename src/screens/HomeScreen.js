@@ -29,7 +29,7 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.containerCard}>
         <View style={styles.card}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Notices')}>
             <Comunicated />
             <Text style={styles.titleCard}>Comunicados</Text>
           </TouchableOpacity>
