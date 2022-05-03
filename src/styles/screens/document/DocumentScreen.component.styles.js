@@ -20,6 +20,9 @@ export default StyleSheet.create({
     color: theme.SECONDARY_COLOR,
     top: -15,
   },
+  contentList : {
+    height: '65%',
+  },
   card: {
     flexDirection: 'row',
     width: '90%',
@@ -27,14 +30,12 @@ export default StyleSheet.create({
     backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
     marginLeft: '5%',
     marginBottom: '3%',
-    borderRadius: 20,
+    borderRadius: 20, 
     alignItems: 'center',
-    justifyContent: 'center',
     padding: '5%',
   },
   titleDoc: {
     fontSize: 15,
-    width: '100%',
     height: '50%',
     color: theme.TAB_FONT_COLOR,
   },
@@ -48,5 +49,7 @@ export default StyleSheet.create({
   },
   containerText: {
     marginLeft: '5%',
+    width: '75%',
+    paddingRight: '5%'
   },
 });
