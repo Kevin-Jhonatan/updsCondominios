@@ -35,7 +35,7 @@ const HomeScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.cardTwo}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Expenses')}>
             <Expensive />
             <Text style={styles.titleCard}>Expensas</Text>
           </TouchableOpacity>
