@@ -23,54 +23,29 @@ export default StyleSheet.create({
   containerLogo: {
     alignItems: 'center',
   },
-  contentList : {
-    height: '65%',
-  },
-  card: {
-    flexDirection: 'row',
-    width: '80%',
-    height: 100,
+  panel : {
     backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
+    flexDirection: 'column',
     marginLeft: '10%',
-    marginBottom: '3%',
-    borderWidth: 1,
+    marginRight: '10%',
     borderRadius: 20, 
-    borderColor: theme.SECONDARY_COLOR,
     alignItems: 'center',
+    paddingTop: '5%',
     paddingLeft: '5%',
     paddingRight: '5%',
+    paddingBottom: '5%',
   },
   titleDoc: {
     fontSize: 15,
-    height: '65%',
+    textAlign: 'center',
     color: theme.COLOR_FONT_PLACEHOLDER,
+    paddingBottom: '5%',
   },
   date: {
+    paddingTop: '5%',
     color: theme.TAB_FONT_COLOR,
-    width: '60%',
   },
   containerText: {
-    marginLeft: '5%',
-    width: '75%',
-    paddingRight: '5%',
-    paddingTop: '5%',
-  },
-  row: {
-    height: '55%',
-    flexDirection: 'row',
-  },
-  column: {
-    flexDirection: 'row',
-    borderWidth: 1,
-    borderRadius: 20,
-    borderColor: theme.SECONDARY_COLOR,
-    height: 25,
-    width: 75,
-    paddingLeft: '5%',
-    paddingRight: '5%',
-  },
-  columnText: {
-    width: '50%',
-    color: theme.SECONDARY_COLOR,
+    width: '95%',
   }
 });
