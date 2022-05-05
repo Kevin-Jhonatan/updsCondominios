@@ -13,7 +13,7 @@ const HomeStackScreen = () => {
       <HomeStack.Screen name="HomeStack" component={HomeScreen} />
       <HomeStack.Screen name="Document" component={DocumentScreen} />
       <HomeStack.Screen name="Notices" component={NoticesScreen} />
-      <HomeStack.Screen name="DetailNotice" component={ViewDetailNotice} options={{ item: {} }}/>
+      <HomeStack.Screen name="DetailNotice" component={ViewDetailNotice} />
     </HomeStack.Navigator>
   );
 };
