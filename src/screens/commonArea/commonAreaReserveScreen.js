@@ -222,7 +222,12 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
           }}
           renderItem={item => {
             return (
-              <View style={{flexDirection: 'column'}}>
+              <View
+                style={{
+                  flexDirection: 'column',
+                  backgroundColor: '#ECEFF9',
+                  borderRadius: 20,
+                }}>
                 <Text>
                   {item.timeInt} - {item.timeOut}
                 </Text>
