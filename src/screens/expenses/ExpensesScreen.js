@@ -7,74 +7,373 @@ import Money from '../../assets/icons/expenses/money';
 import DollarNegado from '../../assets/icons/expenses/dollar_negado';
 import styles from '../../styles/screens/expenses/ExpensesScreen.component.styles';
 
-const DATA = [{
-  id: 1,
-  propertyNumber: "1C",
-  name: "Shirl Frissell",
-  status: "Pagado",
-  period: "Agosto",
-  total: "Bs 0.48"
-}, {
-  id: 2,
-  propertyNumber: "2C",
-  name: "Arie Folland",
-  status: "Pagado",
-  period: "Septiembre",
-  total: "Bs 2.46"
-}, {
-  id: 3,
-  propertyNumber: "3C",
-  name: "Tilly Richardin",
-  status: "Pagado",
-  period: "Octubre",
-  total: "Bs 3.16"
-}, {
-  id: 4,
-  propertyNumber: "4C",
-  name: "Karrie Casebourne",
-  status: "Pagado",
-  period: "Noviembreiciembre",
-  total: "Bs 1.97"
-}, {
-  id: 6,
-  propertyNumber: "6C",
-  name: "Cesar McTear",
-  status: "Pendiente",
-  period: "Enero",
-  total: "Bs 0.08"
-}, {
-  id: 7,
-  propertyNumber: "7C",
-  name: "Bonnee Camplen",
-  status: "Pendiente",
-  period: "Febrero",
-  total: "Bs 1.75"
-}, {
-  id: 8,
-  propertyNumber: "8C",
-  name: "Sven Bremmer",
-  status: "Pendiente",
-  period: "Marzo",
-  total: "Bs 2.70"
-}, {
-  id: 9,
-  propertyNumber: "9C",
-  name: "Cyrillus Dungay",
-  status: "Pendiente",
-  period: "Abril",
-  total: "Bs 8.13"
-}, {
-  id: 10,
-  propertyNumber: "10C",
-  name: "Micki Domonkos",
-  status: "Pendiente",
-  period: "Mayo",
-  total: "Bs 9.14"
-}];
+const DATA = [
+  {
+    id: 1,
+    condominium: "",
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
+    period: "Agosto",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 2,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
+    period: "Septiembre",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 3,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
+    period: "Octubre",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 4,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
+    period: "Noviembreiciembre",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 6,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pendiente",
+    period: "Enero",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 7,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+      status: "Pendiente",
+    period: "Febrero",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 8,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pendiente",
+    period: "Marzo",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 9,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pendiente",
+    period: "Abril",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 10,
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pendiente",
+    period: "Mayo",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }
+];
 
 const ExpencesListItem = ({ item, navigation }) => {
 
-  return <TouchableOpacity>
+  return <TouchableOpacity onPress={ () => navigation.navigate('DetailExpenses', { item: item, navigation: navigation })}>
           <View style={styles.card} id={item.id}>
             <Ellipse />
             <Text style={styles.id}>{item.propertyNumber}</Text>
@@ -103,7 +402,7 @@ const ExpensesScreen = ({navigation}) => {
       <TouchableOpacity onPress={() => navigation.goBack()}>
           <Back style={styles.back} />
       </TouchableOpacity>
-      <Text style={styles.title}>Comunicados</Text>
+      <Text style={styles.title}>Expensas</Text>
       <View style={styles.containerLogo}>
         <Logo />
       </View>
