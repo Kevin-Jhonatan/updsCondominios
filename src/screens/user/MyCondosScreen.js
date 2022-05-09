@@ -5,7 +5,7 @@ import {
   View,
   Text,
   TextInput,
-  SafeAreaView,
+  ScrollView,
   FlatList,
   Alert,
   TouchableOpacity
@@ -82,13 +82,13 @@ const ItemCondominio = ({ title }) => {
 
         {/* Condominio - List of apartments. */}
         <View style={styles.itemCondominioListPropertyContainer}>
-            <FlatList
-              horizontal={true}
-              data={DATA_PROPERTIES}
-              renderItem={renderItemProperty}
-              keyExtractor={item => item.id}
-            />
-          </View>
+          <FlatList
+            horizontal={true}
+            data={DATA_PROPERTIES}
+            renderItem={renderItemProperty}
+            keyExtractor={item => item.id}
+          />
+        </View>
       </View>
     </View>
   );
@@ -111,7 +111,7 @@ const MycondosScreen = ({navigation}) => {
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       title: 'Green Tower',
-    }/* ,
+    },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
       title: 'Condominio Las Lomas',
@@ -119,7 +119,7 @@ const MycondosScreen = ({navigation}) => {
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       title: 'Condominio Eco 1',
-    }, */
+    },
   ];
 
   const renderItemCondominio = ({ item }) => (
@@ -142,18 +142,17 @@ const MycondosScreen = ({navigation}) => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <View style={styles.header}>
-          <TouchableOpacity onPress={logout} style={styles.iconLogout}>
-            <Logout style={styles.icon} />
-            <Text style={styles.titleCard}>Salir</Text>
-          </TouchableOpacity>
-          <View style={styles.containerTitle}>
-            <Text style={styles.title}>Agregar condominios</Text>
-          </View>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={logout} style={styles.iconLogout}>
+          <Logout style={styles.icon} />
+          <Text style={styles.titleCard}>Salir</Text>
+        </TouchableOpacity>
+        <View style={styles.containerTitle}>
+          <Text style={styles.title}>Agregar condominios</Text>
         </View>
-
+      </View>
+      <ScrollView style={styles.containerScroll} contentContainerStyle={{ flexGrow: 1 }}>
         <View style={{width: '80%', marginRight: '10%', marginLeft: '10%'}}>
           <View>
             <View>
@@ -163,42 +162,35 @@ const MycondosScreen = ({navigation}) => {
                 style={styles.input}
               />
             </View>
-            <View>
-              <Button
-                title = "Enviar código"
-                color={theme.COLOR_FONT_PLACEHOLDER}
-                onPress={assignUserToCondominium} 
-              />
-              <TouchableOpacity
-                style={[styles.containerBtn]}
-                title="Enviar código"
-                >
-                <Text style={[styles.titleBtn]}>
-                  Enviar código
-                </Text>
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+              style={[styles.containerBtn]}
+              title="Enviar código"
+              >
+              <Text style={[styles.titleBtn]}>
+                Enviar código
+              </Text>
+            </TouchableOpacity>
           </View>
 
           {/* Mis condominios section */}
+          
           <View>
             <Text style={styles.h2}>
               Mis Condominios
             </Text>
-
-            <View>
-              <FlatList
+              {
+                DATA.map((d, index) => (
+                  <ItemCondominio key={d.id} title={d.title} />
+                ))
+              }
+              {/* <FlatList
+                style = {styles.contentList}
                 data={DATA}
                 renderItem={renderItemCondominio}
                 keyExtractor={item => item.id}
-              />
-              
-
-            </View>
-
+              /> */}
           </View>
     
-
           <View>
             <TouchableOpacity
               style={[styles.containerBtn]}
@@ -213,10 +205,8 @@ const MycondosScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
-    
-      </View>
-    </SafeAreaView>
-    
+      </ScrollView>
+    </View>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import Back from '../../assets/icons/register/Icon_back';
 import Logo from '../../assets/icons/notices/logo';
 import News from '../../assets/icons/notices/News';
@@ -16,7 +16,7 @@ const DATA = [
   {
     id: 2,
     title: "Mantenimiento de camaras de seguridad.",
-    description: 'Duis tempus tristique tellus, id dapibus lectus tincidunt nec. Mauris aliquam tincidunt quam id varius. Sed laoreet mattis orci, a tincidunt tellus viverra et. Curabitur tempor, orci vel lacinia convallis, elit diam dignissim mi, sed euismod risus turpis sit amet nunc. Nulla elementum convallis finibus. Quisque vitae risus ultrices, elementum nunc et, ultrices orci. Proin hendrerit orci ut imperdiet ultricies. Aenean cursus lacus metus, id scelerisque orci ultrices sed. In accumsan imperdiet magna, sed mattis eros cursus et. Nulla lacinia tellus nisi, eu vehicula eros porttitor ut. Vestibulum massa mauris, congue lobortis tellus et, sodales dignissim neque. Duis eget tempor tortor, in semper ante.',
+    description: 'Duis tempus tristique tellus, id dapibus lectus tincidunt nec. Mauris aliquam tincidunt quam id varius. Sed laoreet mattis orci, a tincidunt tellus viverra et. Curabitur tempor, orci vel lacinia convallis, elit diam dignissim mi, sed euismod risus turpis sit amet nunc. Nulla elementum convallis finibus. Quisque vitae risus ultrices, elementum nunc et, ultrices orci. Proin hendrerit orci ut imperdiet ultricies. Aenean cursus lacus metus, id scelerisque orci ultrices sed. In accumsan imperdiet magna, sed mattis eros cursus et. Nulla lacinia tellus nisi, eu vehicula eros porttitor ut. Vestibulum massa mauris, congue lobortis tellus et, sodales dignissim neque. Duis eget tempor tortor, in semper ante.Duis tempus tristique tellus, id dapibus lectus tincidunt nec. Mauris aliquam tincidunt quam id varius. Sed laoreet mattis orci, a tincidunt tellus viverra et. Curabitur tempor, orci vel lacinia convallis, elit diam dignissim mi, sed euismod risus turpis sit amet nunc. Nulla elementum convallis finibus. Quisque vitae risus ultrices, elementum nunc et, ultrices orci. Proin hendrerit orci ut imperdiet ultricies. Aenean cursus lacus metus, id scelerisque orci ultrices sed. In accumsan imperdiet magna, sed mattis eros cursus et. Nulla lacinia tellus nisi, eu vehicula eros porttitor ut. Vestibulum massa mauris, congue lobortis tellus et, sodales dignissim neque. Duis eget tempor tortor, in semper ante. Duis tempus tristique tellus, id dapibus lectus tincidunt nec. Mauris aliquam tincidunt quam id varius. Sed laoreet mattis orci, a tincidunt tellus viverra et. Curabitur tempor, orci vel lacinia convallis, elit diam dignissim mi, sed euismod risus turpis sit amet nunc. Nulla elementum convallis finibus. Quisque vitae risus ultrices, elementum nunc et, ultrices orci. Proin hendrerit orci ut imperdiet ultricies. Aenean cursus lacus metus, id scelerisque orci ultrices sed. In accumsan imperdiet magna, sed mattis eros cursus et. Nulla lacinia tellus nisi, eu vehicula eros porttitor ut. Vestibulum massa mauris, congue lobortis tellus et, sodales dignissim neque. Duis eget tempor tortor, in semper ante. Duis tempus tristique tellus, id dapibus lectus tincidunt nec. Mauris aliquam tincidunt quam id varius. Sed laoreet mattis orci, a tincidunt tellus viverra et. Curabitur tempor, orci vel lacinia convallis, elit diam dignissim mi, sed euismod risus turpis sit amet nunc. Nulla elementum convallis finibus. Quisque vitae risus ultrices, elementum nunc et.',
     date: "30-03-2022",
   },
   {
@@ -67,7 +67,6 @@ const NoticesListItem = ({ item, navigation }) => {
 };
 
 const NoticesScreen = ({navigation}) => {
-  console.log("NoticeScreen", navigation);
 
   return (
     <View style={styles.container}>
@@ -78,16 +77,13 @@ const NoticesScreen = ({navigation}) => {
       <View style={styles.containerLogo}>
         <Logo />
       </View>
-      <SafeAreaView style={{paddingBottom: '5%', marginTop: '5%'}}>
-          <FlatList
-            style = {styles.contentList}
-            data={DATA}
-            renderItem={({item}) => 
-              <NoticesListItem item={item} navigation={navigation}></NoticesListItem>
-            }
-          />
-        
-      </SafeAreaView>
+      <FlatList
+        style = {styles.contentList}
+        data={DATA}
+        renderItem={({item}) => 
+          <NoticesListItem item={item} navigation={navigation}></NoticesListItem>
+        }
+      />
     </View>
   );
 };

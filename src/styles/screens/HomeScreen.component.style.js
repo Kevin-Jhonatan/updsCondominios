@@ -37,12 +37,13 @@ export default StyleSheet.create({
   },
   containerCard: {
     flexDirection: 'row',
+    padding: '5%',
   },
   card: {
     width: 150,
     height: 150,
     backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-    margin: '5%',
+    marginRight: '2.5%',
     borderRadius: 20,
     alignItems: 'center',
     padding: '5%',
@@ -57,7 +58,7 @@ export default StyleSheet.create({
     width: 150,
     height: 150,
     backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-    marginTop: '5%',
+    marginLeft: '2.5%',
     borderRadius: 20,
     alignItems: 'center',
     padding: '5%',

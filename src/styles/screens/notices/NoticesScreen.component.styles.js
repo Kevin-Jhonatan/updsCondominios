@@ -24,7 +24,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   contentList : {
-    height: '65%',
+    //height: '65%',
   },
   card: {
     flexDirection: 'row',

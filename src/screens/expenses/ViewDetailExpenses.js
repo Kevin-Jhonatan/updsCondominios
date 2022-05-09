@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Back from '../../assets/icons/register/Icon_back';
 import Money from '../../assets/icons/expenses/money';
 import DollarNegado from '../../assets/icons/expenses/dollar_negado';
 import styles from '../../styles/screens/expenses/ViewDetailExpenses.component.style';
 
 
-const ViewDetailExpenses = ({route}) => {
+const ViewDetailExpenses = ({route, navigation}) => {
   const { id, propertyNumber, name, status, period, detailExpenses, total} = route.params.item;
-  const navigation = route.params.navigation;
+  
 
   const DATA = [
     {
@@ -51,7 +51,7 @@ const ViewDetailExpenses = ({route}) => {
 
       <Text style={styles.title}>Detalle</Text>
 
-      <SafeAreaView style={{paddingBottom: '5%', marginTop: '5%'}}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View>
           <View style={styles.infoContainer}>
             <Text style={styles.label}>Condominio: <Text style={styles.data}>Green Tower</Text></Text>
@@ -92,7 +92,7 @@ const ViewDetailExpenses = ({route}) => {
             </View>
           </View>
         </View>
-      </SafeAreaView>
+      </ScrollView>
     </View>
   );
 };

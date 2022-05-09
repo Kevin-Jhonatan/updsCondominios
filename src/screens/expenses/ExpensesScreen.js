@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import Back from '../../assets/icons/register/Icon_back';
 import Logo from '../../assets/icons/expenses/logo';
 import Ellipse from '../../assets/icons/expenses/ellipse';
@@ -387,7 +387,7 @@ const ExpencesListItem = ({ item, navigation }) => {
                 <View style={styles.icon}>
                   { item.status == 'Pendiente' ? <DollarNegado/> : item.status == "Pagado" ? <Money/> : null}
                 </View>
-                </View>
+              </View>
               <Text style={styles.label}>Total: <Text style={styles.data}>{item.total}</Text></Text>
             </View>
           </View>
@@ -395,7 +395,6 @@ const ExpencesListItem = ({ item, navigation }) => {
 };
 
 const ExpensesScreen = ({navigation}) => {
-  console.log("NoticeScreen", navigation);
 
   return (
     <View style={styles.container}>
@@ -406,15 +405,13 @@ const ExpensesScreen = ({navigation}) => {
       <View style={styles.containerLogo}>
         <Logo />
       </View>
-      <SafeAreaView style={{paddingBottom: '5%', marginTop: '5%'}}>
-          <FlatList
-            style = {styles.contentList}
-            data={DATA}
-            renderItem={({item}) => 
-              <ExpencesListItem item={item} navigation={navigation}></ExpencesListItem>
-            }
-          />
-      </SafeAreaView>
+      <FlatList
+        style = {styles.contentList}
+        data={DATA}
+        renderItem={({item}) => 
+          <ExpencesListItem item={item} navigation={navigation}></ExpencesListItem>
+        }
+      />
     </View>
   );
 };

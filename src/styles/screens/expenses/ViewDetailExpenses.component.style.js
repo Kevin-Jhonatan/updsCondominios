@@ -51,15 +51,11 @@ export default StyleSheet.create({
     paddingRight: '5%',
   },
   table: {
-    flexDirection: 'column',
     width: '100%',
-    //height: '100%',
     backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-    //flexBasis: '50%',
     borderWidth: 1,
     borderRadius: 10, 
     borderColor: theme.SECONDARY_COLOR,
-    overflow: 'hidden'
   },
   tableHeader: {
     flexDirection: "row",
@@ -71,7 +67,6 @@ export default StyleSheet.create({
   th: {
     fontWeight: '400',
     fontSize: 15,
-    //display: 'flex',
     alignItems: 'center',
     color: theme.COLOR_FONT_PLACEHOLDER,
     textAlign: 'center' ,
@@ -79,10 +74,10 @@ export default StyleSheet.create({
     paddingBottom: 5,
   },
   th1: { 
-    width: '40%',
+    width: '45%',
   },
   th2: { 
-    width: '25%', 
+    width: '20%', 
     borderRightWidth: 1, 
     borderLeftWidth: 1, 
     borderColor: theme.SECONDARY_COLOR,
@@ -108,11 +103,11 @@ export default StyleSheet.create({
   },
   td1: {
     paddingLeft: '2%',
-    width: '40%',
+    width: '45%',
   },
   td2: {
     textAlign: 'center',
-    width: '25%',
+    width: '20%',
     borderRightWidth: 1, 
     borderLeftWidth: 1, 
     borderColor: theme.SECONDARY_COLOR,
@@ -127,7 +122,7 @@ export default StyleSheet.create({
     width: '100%',
     borderBottomColor: theme.SECONDARY_COLOR,
     borderBottomWidth: 1,
-    marginTop: '9%',
+    marginTop: '10%',
   },
   tf: {
     paddingTop: 10,

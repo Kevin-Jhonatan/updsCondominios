@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 // Import common styles.
 import common from '../../common.style';
+import theme from '../../theme.style';
 
 export default StyleSheet.create({
   firstBtn:{
@@ -19,7 +20,9 @@ export default StyleSheet.create({
     width: '70%',
   },
   scrollView: {
-    backgroundColor: '#E8EAF5',
+    backgroundColor: theme.PRIMARY_COLOR,
+    width: '100%',
+    height: '100%',
   },
   input: {
     ...common.input,
@@ -33,7 +36,7 @@ export default StyleSheet.create({
   },
   logoLogin:{
     marginTop: 10,
-    marginBottom: 60,
+    marginBottom: 50,
     width: '80%',
   },
   smallText:{

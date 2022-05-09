@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 
 // Import common styles.
 import common from '../../common.style';
+import theme from '../../theme.style';
 
 export default StyleSheet.create({
   container: {
@@ -11,6 +12,12 @@ export default StyleSheet.create({
   },
   wrapper: {
     width: '80%',
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 25,
+    color: theme.SECONDARY_COLOR,
+    top: -15,
   },
   link: {
     color: 'blue',

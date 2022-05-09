@@ -71,6 +71,8 @@ export default StyleSheet.create({
     backgroundColor: theme.PRIMARY_COLOR,
     width: '100%',
     height: '100%',
+    paddingTop: '5%',
+    paddingBottom: '5%',
   },
   header: {
     display: 'flex',
@@ -107,6 +109,9 @@ export default StyleSheet.create({
     ...common.input,
     marginBottom: 10,
     paddingBottom: 5
+  },
+  contentList : {
+    height: '65%',
   },
 
 });

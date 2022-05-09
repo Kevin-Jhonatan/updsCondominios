@@ -35,25 +35,25 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: theme.BTN_BACKGROUND,
     fontWeight: '300',
-    fontSize: 45,
+    fontSize: 40,
   },
   h2: {
     textAlign: 'center',
     color: theme.BTN_BACKGROUND,
     fontWeight: '300',
-    fontSize: 40,
+    fontSize: 35,
   },
   h3: {
     textAlign: 'center',
     color: theme.BTN_BACKGROUND,
     fontWeight: '300',
-    fontSize: 35,
+    fontSize: 30,
   },
   h4: {
     textAlign: 'center',
     color: theme.BTN_BACKGROUND,
     fontWeight: '300',
-    fontSize: 20,
+    fontSize: 25,
   },
   /* Styte container tab-navigator */
   tabBarStyle: {

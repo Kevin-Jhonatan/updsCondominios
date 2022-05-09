@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import Back from '../../assets/icons/register/Icon_back';
 import Logo from '../../assets/icons/document/logo';
 import Word from '../../assets/icons/document/word';
@@ -67,25 +67,24 @@ const ViewListItem = ({ item }) => {
 };
 
 
-const DocumentScreen = ({navegation}) => {
+const DocumentScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Back style={styles.back} />
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Back style={styles.back}/>
+      </TouchableOpacity>
       <Text style={styles.title}>Documentos</Text>
       <View style={styles.containerLogo}>
         <Logo />
       </View>
-      <SafeAreaView style={{paddingBottom: '5%'}}>
-          <FlatList
-            style = {styles.contentList}
-            data={DATA}
-            renderItem={({item}) => 
-              <ViewListItem item={item}></ViewListItem>
-            }
-          />
-        
-      </SafeAreaView>
+      <FlatList
+        style = {styles.contentList}
+        data={DATA}
+        renderItem={({item}) => 
+          <ViewListItem item={item}></ViewListItem>
+        }
+      />
     </View>
   );
 };

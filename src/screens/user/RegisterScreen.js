@@ -35,6 +35,7 @@ const RegisterScreen = ({navigation}) => {
       <View style={styles.container}>
         <ActivityIndicator size="large" color="#00ff00" animating={isLoading} />
         <View style={styles.wrapper}>
+          <Text style={styles.title}>Crear Cuenta</Text>
           <View style={styles.profile}>
             <Add style={styles.iconAdd} />
             <Image
@@ -54,7 +55,7 @@ const RegisterScreen = ({navigation}) => {
             />
             <User style={styles.icon} />
           </View>
-          <View style={styles.containerInput}>
+          {/* <View style={styles.containerInput}>
             <TextInput
               placeholder="Nombre(s)"
               style={styles.input}
@@ -106,7 +107,7 @@ const RegisterScreen = ({navigation}) => {
               placeholderTextColor={theme.COLOR_FONT_PLACEHOLDER}
             />
             <Mail style={styles.icon} />
-          </View>
+          </View> */}
           <View style={styles.containerInput}>
             <TextInput
               placeholder="Contraseña"
