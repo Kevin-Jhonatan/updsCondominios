@@ -29,13 +29,13 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.containerCard}>
         <View style={styles.card}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Notices')}>
             <Comunicated />
             <Text style={styles.titleCard}>Comunicados</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.cardTwo}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Expenses')}>
             <Expensive />
             <Text style={styles.titleCard}>Expensas</Text>
           </TouchableOpacity>
