@@ -1,32 +1,41 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  SafeAreaView,
-  FlatList,
-} from 'react-native';
-import {
-  Agenda,
-  DateData,
-  AgendaEntry,
-  AgendaSchedule,
-  LocaleConfig,
-} from 'react-native-calendars';
+import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
+import {Agenda, LocaleConfig} from 'react-native-calendars';
 import Back from '../../assets/icons/register/Icon_back';
-import styles from '../../styles/screens/commonArea/commonAreaScreen.component.styles';
+import styles from '../../styles/screens/commonArea/commonAreaReserveScreen.component.styles';
 import IconFlech from '../../assets/icons/commonArea/icon-flecha';
 import Paid from '../../assets/icons/commonArea/dollar';
 import Pending from '../../assets/icons/commonArea/dollar_negado';
+
 const CommonAreaReserveScreen = ({route, navigation}) => {
   const {id} = route.params;
   const {title} = route.params;
 
   const [items, setItems] = useState([]);
-  const renderItem = () => {
-    return <View></View>;
+
+  const renderItem = item => {
+    return (
+      <View style={styles.containerCardReserve}>
+        <Text style={styles.colorTime}>
+          {item.timeInt} - {item.timeOut}
+        </Text>
+        <Text style={styles.colorName}>{item.name}</Text>
+        <Text style={styles.colorState}>
+          Estado:
+          {item.state ? (
+            <Text style={styles.colorName}>
+              Pagado <Paid />
+            </Text>
+          ) : (
+            <Text style={styles.colorName}>
+              Pendiende <Pending />
+            </Text>
+          )}
+        </Text>
+      </View>
+    );
   };
+  // Traducciones a español calendar Agenda
   LocaleConfig.locales['es'] = {
     monthNames: [
       'Enero',
@@ -77,175 +86,16 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
         <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
           <Back style={styles.back} />
         </TouchableOpacity>
-        <Text style={styles.title}>
-          {title}
-          {id}
-        </Text>
-        <View
-          style={{
-            alignSelf: 'center',
-          }}>
-          <Text style={{textAlign: 'center', color: '#5a66df'}}>2022</Text>
+        <Text style={styles.title}>{title}</Text>
+        <View>
+          <Text style={styles.currentYear}>2022</Text>
         </View>
         <Agenda
+          minDate="2022-01-01"
+          maxDate="2023-01-01"
           showClosingKnob={true}
-          //showWeekNumbers={true}
           onDayChange={day => {
-            console.log('day cargado');
-          }}
-          renderKnob={() => {
-            return (
-              <View>
-                <IconFlech width={30} height={11} />
-              </View>
-            );
-          }}
-          items={{
-            '2022-05-01': [
-              {
-                id: '1',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Nicol Peres',
-                state: true,
-              },
-              {
-                id: '12',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Nicol',
-                state: true,
-              },
-            ],
-            '2022-05-02': [
-              {
-                id: '2',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Nicol Peres',
-                state: true,
-              },
-            ],
-            '2022-05-03': [
-              {
-                id: '2',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Nicol Peres',
-                state: true,
-              },
-            ],
-            '2022-05-04': [
-              {
-                id: '5',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Kevin Peres',
-                state: true,
-              },
-            ],
-            '2022-05-05': [
-              {
-                id: '6',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Juan Peres',
-                state: true,
-              },
-            ],
-            '2022-05-06': [
-              {
-                id: '7',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'Nicol Peres',
-                state: true,
-              },
-            ],
-            '2022-05-07': [
-              {
-                id: '8',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'soy el 5',
-                state: true,
-              },
-            ],
-            '2022-05-08': [
-              {
-                id: '9',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'soy el 5',
-                state: true,
-              },
-            ],
-            '2022-05-09': [
-              {
-                id: '10',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'soy el 5',
-                state: true,
-              },
-            ],
-            '2022-05-10': [
-              {
-                id: '11',
-                date: '2022-03-10',
-                timeInt: '10:00',
-                timeOut: '12:00',
-                name: 'soy el 5',
-                state: false,
-              },
-            ],
-            '2022-05-11': [],
-            '2022-05-12': [],
-            '2022-05-13': [],
-            '2022-05-14': [],
-            '2022-05-15': [],
-            '2022-05-16': [],
-            '2022-05-17': [],
-            '2022-05-18': [],
-            '2022-05-19': [],
-            '2022-05-20': [],
-          }}
-          renderItem={item => {
-            return (
-              <View
-                style={{
-                  flexDirection: 'column',
-                  backgroundColor: '#ECEFF9',
-                  borderRadius: 20,
-                }}>
-                <Text>
-                  {item.timeInt} - {item.timeOut}
-                </Text>
-                <Text>{item.name}</Text>
-                <Text>
-                  Estado:
-                  {item.state ? (
-                    <Text>
-                      Pagado <Paid />
-                    </Text>
-                  ) : (
-                    <Text>
-                      Pendiende <Pending />
-                    </Text>
-                  )}
-                </Text>
-              </View>
-            );
+            console.log('día cargado', day);
           }}
           loadItemsForMonth={month => {
             console.log(
@@ -260,54 +110,183 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
             );
           }}
           onDayPress={day => {
-            console.log('day pressed', day);
+            console.log('dia precionado', day);
           }}
-          minDate="2022-01-01"
-          maxDate="2023-01-01"
-          //selected="2022-05-05"
-          calendarStyle={{color: 'red'}}
           // fechas marcadas en el calendario
           markedDates={{
-            '2022-05-20': {
+            '2022-05-10': {
               selected: true,
-              // este market nos indica ese punto rodo
-              marked: false,
-              textColor: 'red',
-              startingDay: true,
-              selectedColor: 'orange',
+              selectedColor: '#FF3D81',
               disableTouchEvent: true,
             },
-            /*'2022-05-23': {
-              customStyles: {
-                container: {
-                  color: 'red',
-                },
-              },
-            },*/
-            '2022-05-21': {
+            '2022-05-15': {
               selected: true,
-              // este market nos indica ese punto rodo
-              textColor: 'red',
-              startingDay: true,
-              selectedColor: 'orange',
+              selectedColor: '#FF3D81',
               disableTouchEvent: true,
             },
-            '2022-05-17': {
-              //marked: true,
-              dotColor: 'red',
-              color: '#5a66df',
-              endingDay: true,
-            },
-            '2022-06-18': {disabled: false},
+            '2022-05-17': {disabled: false},
           }}
-          onDayPress={day => {
-            console.log('dia precionado', day);
+          renderItem={renderItem}
+          items={{
+            '2022-05-01': [
+              {
+                id: '1',
+                date: '2022-05-01',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Nicol Peres',
+                state: true,
+              },
+              {
+                id: '02',
+                date: '2022-05-01',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Andres Villarroel',
+                state: true,
+              },
+              {
+                id: '03',
+                date: '2022-05-01',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Andres Villarroel',
+                state: true,
+              },
+              {
+                id: '03',
+                date: '2022-05-01',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Andres Villarroel',
+                state: true,
+              },
+            ],
+            '2022-05-02': [
+              {
+                id: '2',
+                date: '2022-05-02',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Mayra Roman',
+                state: true,
+              },
+            ],
+            '2022-05-03': [
+              {
+                id: '2',
+                date: '2022-05-03',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Jose Miguel',
+                state: true,
+              },
+            ],
+            '2022-05-04': [
+              {
+                id: '5',
+                date: '2022-05-04',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Kevin Peres',
+                state: true,
+              },
+            ],
+            '2022-05-05': [
+              {
+                id: '6',
+                date: '2022-05-05',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Juan Peres',
+                state: true,
+              },
+            ],
+            '2022-05-06': [
+              {
+                id: '7',
+                date: '2022-05-06',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Nicol Peres',
+                state: true,
+              },
+            ],
+            '2022-05-07': [
+              {
+                id: '8',
+                date: '2022-05-07',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Rene Montero',
+                state: true,
+              },
+            ],
+            '2022-05-08': [
+              {
+                id: '9',
+                date: '2022-05-08',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Simon Bolivar',
+                state: true,
+              },
+            ],
+            '2022-05-09': [
+              {
+                id: '10',
+                date: '2022-05-09',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Pedro Escamoso',
+                state: true,
+              },
+            ],
+            '2022-05-10': [
+              {
+                id: '11',
+                date: '2022-05-10',
+                timeInt: '10:00',
+                timeOut: '12:00',
+                name: 'Juan Del Valle',
+                state: false,
+              },
+            ],
+            '2022-05-11': [],
+            '2022-05-12': [],
+            '2022-05-13': [],
+            '2022-05-14': [],
+            '2022-05-15': [],
+            '2022-05-16': [],
+            '2022-05-17': [],
+            '2022-05-18': [],
+            '2022-05-19': [],
+            '2022-05-20': [],
+            '2022-05-21': [],
+            '2022-05-22': [],
+            '2022-05-23': [],
+            '2022-05-24': [],
+            '2022-05-25': [],
+            '2022-05-26': [],
+            '2022-05-27': [],
+            '2022-05-28': [],
+            '2022-05-29': [],
+            '2022-05-30': [],
+            '2022-05-31': [],
+          }}
+          // Método donde se personaliza el icono de apertura de calendario
+          renderKnob={() => {
+            return (
+              <View>
+                <IconFlech width={30} height={11} />
+              </View>
+            );
           }}
           theme={{
             agendaDayTextColor: '#5A66DF',
             agendaDayNumColor: '#5A66DF',
             // color del dia actual de la agenda
-            agendaTodayColor: 'green',
+            agendaTodayColor: '#363947',
             agendaKnobColor: '#5a66df',
             selectedDotColor: 'red',
             // color de fondo del calendario
@@ -320,8 +299,7 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
             backgroundColor: '#E8EAF5',
             // color de texto title mes
             monthTextColor: '#5A66DF',
-            arrowColor: 'orange',
-            indicatorColor: 'green',
+            indicatorColor: '#5A66DF',
             // tamaño de text se los dias de la semana
             textDayHeaderFontSize: 16,
             textMonthFontSize: 16,

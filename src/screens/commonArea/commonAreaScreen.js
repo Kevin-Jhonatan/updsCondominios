@@ -66,21 +66,23 @@ const CommonAreaScreen = ({navigation}) => {
     );
   };
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('HomeStack')}>
-        <Back style={styles.back} />
-      </TouchableOpacity>
-      <Text style={styles.title}>Áreas comunes</Text>
-      <View style={styles.containerLogo}>
-        <Logo />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.navigate('HomeStack')}>
+          <Back style={styles.back} />
+        </TouchableOpacity>
+        <Text style={styles.title}>Áreas comunes</Text>
+        <View style={styles.containerLogo}>
+          <Logo />
+        </View>
+        <FlatList
+          data={DATA}
+          renderItem={({item}) => (
+            <OpenCommonArea id={item.id} title={item.title} />
+          )}
+        />
       </View>
-      <FlatList
-        data={DATA}
-        renderItem={({item}) => (
-          <OpenCommonArea id={item.id} title={item.title} />
-        )}
-      />
-    </View>
+    </SafeAreaView>
   );
 };
 
