@@ -5,7 +5,7 @@ import {
   View,
   Text,
   TextInput,
-  ScrollView,
+  SafeAreaView,
   FlatList,
   Alert,
   TouchableOpacity
@@ -120,6 +120,14 @@ const MycondosScreen = ({navigation}) => {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       title: 'Condominio Eco 1',
     },
+    {
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f632',
+      title: 'Condominio Las Lomas',
+    },
+    {
+      id: '58694a0f-3da1-471f-bd96-145571e29d722',
+      title: 'Condominio Eco 1',
+    }
   ];
 
   const renderItemCondominio = ({ item }) => (
@@ -142,71 +150,71 @@ const MycondosScreen = ({navigation}) => {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={logout} style={styles.iconLogout}>
-          <Logout style={styles.icon} />
-          <Text style={styles.titleCard}>Salir</Text>
-        </TouchableOpacity>
-        <View style={styles.containerTitle}>
-          <Text style={styles.title}>Agregar condominios</Text>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={logout} style={styles.iconLogout}>
+            <Logout style={styles.icon} />
+            <Text style={styles.titleCard}>Salir</Text>
+          </TouchableOpacity>
+          <View style={styles.containerTitle}>
+            <Text style={styles.title}>Agregar condominios</Text>
+          </View>
         </View>
-      </View>
-      <ScrollView style={styles.containerScroll} contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{width: '80%', marginRight: '10%', marginLeft: '10%'}}>
-          <View>
+          <View style={{width: '80%', marginRight: '10%', marginLeft: '10%'}}>
             <View>
-              <TextInput
-                placeholder='Agregar código de condominio'
-                placeholderTextColor={theme.COLOR_FONT_PLACEHOLDER}
-                style={styles.input}
-              />
+              <View>
+                <TextInput
+                  placeholder='Agregar código de condominio'
+                  placeholderTextColor={theme.COLOR_FONT_PLACEHOLDER}
+                  style={styles.input}
+                />
+              </View>
+              <TouchableOpacity
+                style={[styles.containerBtn]}
+                title="Enviar código"
+                >
+                <Text style={[styles.titleBtn]}>
+                  Enviar código
+                </Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity
-              style={[styles.containerBtn]}
-              title="Enviar código"
-              >
-              <Text style={[styles.titleBtn]}>
-                Enviar código
-              </Text>
-            </TouchableOpacity>
-          </View>
 
-          {/* Mis condominios section */}
-          
-          <View>
-            <Text style={styles.h2}>
-              Mis Condominios
-            </Text>
-              {
-                DATA.map((d, index) => (
-                  <ItemCondominio key={d.id} title={d.title} />
-                ))
-              }
-              {/* <FlatList
-                style = {styles.contentList}
-                data={DATA}
-                renderItem={renderItemCondominio}
-                keyExtractor={item => item.id}
-              /> */}
-          </View>
-    
-          <View>
-            <TouchableOpacity
-              style={[styles.containerBtn]}
-              title="Abrir condominio"
-              onPress={() => {
-                openCondo()
-              }}
-              >
-              <Text style={[styles.titleBtn]}>
-                Abrir condominio
+            {/* Mis condominios section */}
+            
+            <View>
+              <Text style={styles.h2}>
+                Mis Condominios
               </Text>
-            </TouchableOpacity>
+                {/*
+                  DATA.map((d, index) => (
+                    <ItemCondominio key={d.id} title={d.title} />
+                  ))*/
+                }
+                <FlatList
+                  style = {styles.contentList}
+                  data={DATA}
+                  renderItem={renderItemCondominio}
+                  keyExtractor={item => item.id}
+                />
+            </View>
+      
+            <View>
+              <TouchableOpacity
+                style={[styles.containerBtn]}
+                title="Abrir condominio"
+                onPress={() => {
+                  openCondo()
+                }}
+                >
+                <Text style={[styles.titleBtn]}>
+                  Abrir condominio
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-      </ScrollView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 

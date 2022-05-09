@@ -111,7 +111,7 @@ export default StyleSheet.create({
     paddingBottom: 5
   },
   contentList : {
-    height: '65%',
+    height: '55%',
   },
 
 });

@@ -23,9 +23,6 @@ export default StyleSheet.create({
   containerLogo: {
     alignItems: 'center',
   },
-  contentList : {
-    height: '65%',
-  },
   card: {
     flexDirection: 'row',
     width: '80%',

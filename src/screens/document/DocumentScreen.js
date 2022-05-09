@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import Back from '../../assets/icons/register/Icon_back';
 import Logo from '../../assets/icons/document/logo';
 import Word from '../../assets/icons/document/word';
@@ -50,7 +50,48 @@ const DATA = [
     title: "Document 6 PDF EXAMENDEINGRESOFCE1-2022_0_2021-12-30_08-42",
     date: "15-04-2022",
     source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/EXAMENDEINGRESOFCE1-2022_0_2021-12-30_08-42.pdf"
-  }
+  },{
+    id: 8,
+    type:"Word",
+    title: "Document 7 Word ECN CULTIVAR EL ROMANCE Y EL AMOR",
+    date: "25-03-2022",
+    source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/ECN%2520CULTIVAR%2520EL%2520ROMANCE%2520Y%2520EL%2520AMOR.docx"
+  },
+  {
+    id: 9,
+    type:"Excel",
+    title: "Document 8 PDF Workout Log",
+    date: "30-03-2022",
+    source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/Workout%20Log.xlsx"
+  },
+  {
+    id: 10,
+    type:"Pdf",
+    title: "Document 9 PDF EXAMENDEINGRESOFCE1-2022_0_2021-12-30_08-42",
+    date: "15-04-2022",
+    source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/EXAMENDEINGRESOFCE1-2022_0_2021-12-30_08-42.pdf"
+  },
+  {
+    id: 11,
+    type:"Word",
+    title: "Document 10 Word ECN CULTIVAR EL ROMANCE Y EL AMOR",
+    date: "25-03-2022",
+    source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/ECN%2520CULTIVAR%2520EL%2520ROMANCE%2520Y%2520EL%2520AMOR.docx"
+  },
+  {
+    id: 12,
+    type:"Excel",
+    title: "Document 11 Excel Workout Log",
+    date: "30-03-2022",
+    source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/Workout%20Log.xlsx"
+  },
+  {
+    id: 13,
+    type:"Pdf",
+    title: "Document 12 PDF EXAMENDEINGRESOFCE1-2022_0_2021-12-30_08-42",
+    date: "15-04-2022",
+    source:"https://dev-condominios.cochasoft.com/sites/default/files/2022-04/EXAMENDEINGRESOFCE1-2022_0_2021-12-30_08-42.pdf"
+  },
 ];
 
 const ViewListItem = ({ item }) => {
@@ -70,22 +111,23 @@ const ViewListItem = ({ item }) => {
 const DocumentScreen = ({navigation}) => {
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Back style={styles.back}/>
-      </TouchableOpacity>
-      <Text style={styles.title}>Documentos</Text>
-      <View style={styles.containerLogo}>
-        <Logo />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Back style={styles.back}/>
+        </TouchableOpacity>
+        <Text style={styles.title}>Documentos</Text>
+        <View style={styles.containerLogo}>
+          <Logo />
+        </View>
+        <FlatList
+          data={DATA}
+          renderItem={({item}) => 
+            <ViewListItem item={item}></ViewListItem>
+          }
+        />
       </View>
-      <FlatList
-        style = {styles.contentList}
-        data={DATA}
-        renderItem={({item}) => 
-          <ViewListItem item={item}></ViewListItem>
-        }
-      />
-    </View>
+    </SafeAreaView>
   );
 };
 

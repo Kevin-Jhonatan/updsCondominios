@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView ,FlatList, TouchableOpacity } from 'react-native';
 import Back from '../../assets/icons/register/Icon_back';
 import Logo from '../../assets/icons/expenses/logo';
 import Ellipse from '../../assets/icons/expenses/ellipse';
@@ -9,12 +9,11 @@ import styles from '../../styles/screens/expenses/ExpensesScreen.component.style
 
 const DATA = [
   {
-    id: 1,
-    condominium: "",
+    id: 12,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pagado",
-    period: "Agosto",
+    status: "Pendiente",
+    period: "Mayo",
     detailExpenses: [
       {
         id: 1,
@@ -50,11 +49,11 @@ const DATA = [
     total: "Bs 204.14"
   }, 
   {
-    id: 2,
+    id: 11,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pagado",
-    period: "Septiembre",
+    status: "Pendiente",
+    period: "Abril",
     detailExpenses: [
       {
         id: 1,
@@ -88,13 +87,13 @@ const DATA = [
       }
     ],
     total: "Bs 204.14"
-  }, 
+  },
   {
-    id: 3,
+    id: 10,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pagado",
-    period: "Octubre",
+    status: "Pendiente",
+    period: "Marzo",
     detailExpenses: [
       {
         id: 1,
@@ -128,13 +127,13 @@ const DATA = [
       }
     ],
     total: "Bs 204.14"
-  }, 
+  },
   {
-    id: 4,
+    id: 9,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pagado",
-    period: "Noviembreiciembre",
+      status: "Pendiente",
+    period: "Febrero",
     detailExpenses: [
       {
         id: 1,
@@ -168,9 +167,9 @@ const DATA = [
       }
     ],
     total: "Bs 204.14"
-  }, 
+  },
   {
-    id: 6,
+    id: 8,
     propertyNumber: "1C",
     name: "Shirl Frissell",
     status: "Pendiente",
@@ -213,8 +212,8 @@ const DATA = [
     id: 7,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-      status: "Pendiente",
-    period: "Febrero",
+    status: "Pagado",
+    period: "Noviembreiciembre",
     detailExpenses: [
       {
         id: 1,
@@ -250,11 +249,11 @@ const DATA = [
     total: "Bs 204.14"
   }, 
   {
-    id: 8,
+    id: 6,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pendiente",
-    period: "Marzo",
+    status: "Pagado",
+    period: "Octubre",
     detailExpenses: [
       {
         id: 1,
@@ -290,11 +289,11 @@ const DATA = [
     total: "Bs 204.14"
   }, 
   {
-    id: 9,
+    id: 5,
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pendiente",
-    period: "Abril",
+    status: "Pagado",
+    period: "Septiembre",
     detailExpenses: [
       {
         id: 1,
@@ -330,10 +329,134 @@ const DATA = [
     total: "Bs 204.14"
   }, 
   {
-    id: 10,
+    id: 4,
+    condominium: "",
     propertyNumber: "1C",
     name: "Shirl Frissell",
-    status: "Pendiente",
+    status: "Pagado",
+    period: "Agosto",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 3,
+    condominium: "",
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
+    period: "Julio",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 2,
+    condominium: "",
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
+    period: "Junio",
+    detailExpenses: [
+      {
+        id: 1,
+        description: 'Limpiza (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 2,
+        description: 'Ascensor (10)',
+        amount: 627,
+        amountToPay: 62,
+      },
+      {
+        id: 3,
+        description: 'Jardineria (14)',
+        amount: 100,
+        amountToPay: 7.14,
+      },
+      {
+        id: 4,
+        description: 'Gas (14)',
+        amount: 700,
+        amountToPay: 50,
+      },
+      {
+        id: 5,
+        description: 'Administracion (14)',
+        amount: 500,
+        amountToPay: 35,
+      }
+    ],
+    total: "Bs 204.14"
+  }, 
+  {
+    id: 1,
+    condominium: "",
+    propertyNumber: "1C",
+    name: "Shirl Frissell",
+    status: "Pagado",
     period: "Mayo",
     detailExpenses: [
       {
@@ -397,22 +520,23 @@ const ExpencesListItem = ({ item, navigation }) => {
 const ExpensesScreen = ({navigation}) => {
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Back style={styles.back} />
-      </TouchableOpacity>
-      <Text style={styles.title}>Expensas</Text>
-      <View style={styles.containerLogo}>
-        <Logo />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Back style={styles.back} />
+        </TouchableOpacity>
+        <Text style={styles.title}>Expensas</Text>
+        <View style={styles.containerLogo}>
+          <Logo />
+        </View>
+        <FlatList
+          data={DATA}
+          renderItem={({item}) => 
+            <ExpencesListItem item={item} navigation={navigation}></ExpencesListItem>
+          }
+        />
       </View>
-      <FlatList
-        style = {styles.contentList}
-        data={DATA}
-        renderItem={({item}) => 
-          <ExpencesListItem item={item} navigation={navigation}></ExpencesListItem>
-        }
-      />
-    </View>
+    </SafeAreaView>
   );
 };
 

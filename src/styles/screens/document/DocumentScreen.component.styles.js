@@ -20,9 +20,6 @@ export default StyleSheet.create({
     color: theme.SECONDARY_COLOR,
     top: -15,
   },
-  contentList : {
-    //height: '65%',
-  },
   card: {
     flexDirection: 'row',
     width: '90%',
