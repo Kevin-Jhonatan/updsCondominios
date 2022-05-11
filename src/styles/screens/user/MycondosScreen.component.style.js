@@ -5,6 +5,10 @@ import common from '../../common.style';
 import theme from '../../theme.style';
 
 export default StyleSheet.create({
+  mainContainerList: {
+    paddingHorizontal: '5%',
+    width: '100%',
+  },
   itemCondominioContainer: {
     backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
     borderRadius: 20,
@@ -12,18 +16,18 @@ export default StyleSheet.create({
     marginVertical: 0,
     marginBottom: 8,
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     flex: 1,
-  },
-  itemCondominioLeftContainer: {
-    width: '45%',
-    marginRight: 10
-  },
-  itemCondominioRightContainer: {
-    width: '50%',
-  },
-  itemCondominioImage: {
+    alignItems: 'center',
     width: '100%',
+    height: 150,
+  },
+  itemImageContainer: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  imageCondo: {
+    width: '90%',
     height: '90%',
     borderRadius: 10
   },
@@ -41,7 +45,8 @@ export default StyleSheet.create({
   },
   itemCondominioTitle: {
     color: theme.SECONDARY_COLOR,
-    fontSize: 14,
+    fontSize: 15,
+    fontWeight: '400',
     marginBottom: 5
   },
   itemCondominioTitleAddProperty: {
@@ -80,14 +85,17 @@ export default StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100%',
-    marginBottom: '7%'
   },
   iconLogout: {
     marginLeft: '5%',
   },
-  containerTitle: {
+  iconPlus: {
+    position: 'absolute',
+    right: '5%',
+  },
+  modalTitle: {
     alignItems: 'center',
-    marginLeft: '12%'
+    marginBottom: '15%',
   },
   title: {
     color: theme.SECONDARY_COLOR,
@@ -101,6 +109,7 @@ export default StyleSheet.create({
   },
   containerBtn: {
     ...common.containerBtn,
+    width: '80%',
   },
   titleBtn: {
     ...common.titleBtn,
@@ -111,7 +120,35 @@ export default StyleSheet.create({
     paddingBottom: 5
   },
   contentList : {
-    height: '55%',
+    height: '85%',
   },
-
+  contentModal: {
+    backgroundColor: 'black',
+    opacity: 0.85,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalView: {
+    width: '90%',
+    margin: 20,
+    backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
+    opacity: 1,
+    borderRadius: 20,
+    padding: 25,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  containerClose: {
+    position: 'absolute',
+    right: '2%',
+    top: '2%',
+  }
 });
