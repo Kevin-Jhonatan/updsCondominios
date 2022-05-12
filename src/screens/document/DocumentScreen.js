@@ -120,12 +120,22 @@ const DocumentScreen = ({navigation}) => {
         <View style={styles.containerLogo}>
           <Logo />
         </View>
-        <FlatList
-          data={DATA}
-          renderItem={({item}) => 
-            <ViewListItem item={item}></ViewListItem>
-          }
-        />
+        {
+          DATA.length > 0 ?
+          <FlatList
+            data={DATA}
+            renderItem={({item}) => 
+              <ViewListItem item={item}></ViewListItem>
+            }
+          />
+          : 
+          <View >
+            <Text style={styles.txtNoItems}>
+              No tiene Documentos para mostrar.
+            </Text>
+          </View>
+        }
+        
       </View>
     </SafeAreaView>
   );

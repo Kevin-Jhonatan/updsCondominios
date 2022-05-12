@@ -49,4 +49,11 @@ export default StyleSheet.create({
     width: '75%',
     paddingRight: '5%'
   },
+  txtNoItems: {
+    fontSize: 20,
+    color: theme.TAB_FONT_COLOR,
+    opacity: 0.4,
+    textAlign: 'center',
+    marginTop: '5%',
+  }
 });

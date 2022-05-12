@@ -122,6 +122,11 @@ export default StyleSheet.create({
   contentList : {
     height: '85%',
   },
+  txtNoItems: {
+    fontSize: 20,
+    color: theme.TAB_FONT_COLOR,
+    opacity: 0.4,
+  },
   contentModal: {
     backgroundColor: 'black',
     opacity: 0.85,

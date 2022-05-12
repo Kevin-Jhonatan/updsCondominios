@@ -75,5 +75,12 @@ export default StyleSheet.create({
   columnText: {
     width: '50%',
     color: theme.SECONDARY_COLOR,
+  },
+  txtNoItems: {
+    fontSize: 20,
+    color: theme.TAB_FONT_COLOR,
+    opacity: 0.4,
+    textAlign: 'center',
+    marginTop: '5%',
   }
 });

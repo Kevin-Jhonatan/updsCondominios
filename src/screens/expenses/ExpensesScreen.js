@@ -529,12 +529,21 @@ const ExpensesScreen = ({navigation}) => {
         <View style={styles.containerLogo}>
           <Logo />
         </View>
-        <FlatList
-          data={DATA}
-          renderItem={({item}) => 
-            <ExpencesListItem item={item} navigation={navigation}></ExpencesListItem>
-          }
-        />
+        {
+          DATA.length > 0 ? 
+          <FlatList
+            data={DATA}
+            renderItem={({item}) => 
+              <ExpencesListItem item={item} navigation={navigation}></ExpencesListItem>
+            }
+          />
+          : 
+          <View >
+            <Text style={styles.txtNoItems}>
+              No tiene Expensas para mostrar.
+            </Text>
+          </View>
+        }
       </View>
     </SafeAreaView>
   );

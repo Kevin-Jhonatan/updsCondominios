@@ -114,12 +114,21 @@ const NoticesScreen = ({navigation}) => {
         <View style={styles.containerLogo}>
           <Logo />
         </View>
-        <FlatList
-          data={DATA}
-          renderItem={({item}) => 
-            <NoticesListItem item={item} navigation={navigation}></NoticesListItem>
-          }
-        />
+        {
+          DATA.length > 0 ? 
+          <FlatList
+            data={DATA}
+            renderItem={({item}) => 
+              <NoticesListItem item={item} navigation={navigation}></NoticesListItem>
+            }
+          /> : 
+          <View >
+            <Text style={styles.txtNoItems}>
+              No tiene Comunicados para mostrar.
+            </Text>
+          </View>
+        }
+        
       </View>
     </SafeAreaView>
   );

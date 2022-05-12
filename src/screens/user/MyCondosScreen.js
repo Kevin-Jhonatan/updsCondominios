@@ -191,12 +191,21 @@ const MycondosScreen = ({navigation}) => {
             <Text style={styles.h2}>
               Mis Condominios
             </Text>
-              <FlatList
-                style = {styles.contentList}
-                data={DATA}
-                renderItem={renderItemCondominio}
-                keyExtractor={item => item.id}
-              />
+            {
+               DATA.length > 0 ? <FlatList
+                                      style = {styles.contentList}
+                                      data={DATA}
+                                      renderItem={renderItemCondominio}
+                                      keyExtractor={item => item.id}
+                                    /> : 
+                                    <View >
+                                      <Text style={styles.txtNoItems}>
+                                        No tiene Condominios registrados.
+                                      </Text>
+                                    </View>
+                                    
+            }
+              
           </View>
         </View>
       </View>
