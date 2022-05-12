@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {ScrollView, Text, View, TouchableOpacity} from 'react-native';
+import {ScrollView, Text, View, TouchableOpacity, SafeAreaView} from 'react-native';
 import {ActivityIndicator} from 'react-native';
 import {AuthContext} from '../context/AuthContext';
 import Logout from '../assets/icons/home/logout';
@@ -14,53 +14,55 @@ import styles from '../styles/screens/HomeScreen.component.style';
 const HomeScreen = ({navigation}) => {
   const {userInfo, isLoading, logout} = useContext(AuthContext);
   return (
-    <View style={styles.container}>
-      {/* <Text style={styles.welcome}>Condominios {userInfo.current_user.name}</Text> */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={logout} style={styles.iconLogout}>
-          <Logout style={styles.icon} />
-          <Text style={styles.titleCard}>Salir</Text>
-        </TouchableOpacity>
-        <View style={styles.containerTitle}>
-          <Text style={styles.title}>Condominios</Text>
-          <Emoji />
+    <SafeAreaView>
+      <View style={styles.container}>
+        {/* <Text style={styles.welcome}>Condominios {userInfo.current_user.name}</Text> */}
+        <View style={styles.header}>
+          <TouchableOpacity onPress={logout} style={styles.iconLogout}>
+            <Logout style={styles.icon} />
+            <Text style={styles.titleCard}>Salir</Text>
+          </TouchableOpacity>
+          <View style={styles.containerTitle}>
+            <Text style={styles.title}>Condominios</Text>
+            <Emoji />
+          </View>
+          <Notification style={styles.iconNotification} />
         </View>
-        <Notification style={styles.iconNotification} />
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+          <View style={{paddingLeft: '5%', paddingRight: '5%'}}>
+            <View style={styles.containerCard}>
+              <View style={styles.card}>
+                <TouchableOpacity onPress={() => navigation.navigate('Notices')}>
+                  <Comunicated />
+                  <Text style={styles.titleCard}>Comunicados</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.cardTwo}>
+                <TouchableOpacity onPress={() => navigation.navigate('Expenses')}>
+                  <Expensive />
+                  <Text style={styles.titleCard}>Expensas</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            <View style={styles.containerCard}>
+              <View style={styles.card}>
+                <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
+                  <AreaCommon />
+                  <Text style={styles.titleCard}>Área común</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.cardTwo}>
+                <TouchableOpacity onPress={() => navigation.navigate('Document')}>
+                  <Document />
+                  <Text style={styles.titleCard}>Documentos</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+        <ActivityIndicator size="large" color="#5A66DF" animating={isLoading} />
       </View>
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{paddingLeft: '5%', paddingRight: '5%'}}>
-          <View style={styles.containerCard}>
-            <View style={styles.card}>
-              <TouchableOpacity onPress={() => navigation.navigate('Notices')}>
-                <Comunicated />
-                <Text style={styles.titleCard}>Comunicados</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.cardTwo}>
-              <TouchableOpacity onPress={() => navigation.navigate('Expenses')}>
-                <Expensive />
-                <Text style={styles.titleCard}>Expensas</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.containerCard}>
-            <View style={styles.card}>
-              <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
-                <AreaCommon />
-                <Text style={styles.titleCard}>Área común</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.cardTwo}>
-              <TouchableOpacity onPress={() => navigation.navigate('Document')}>
-                <Document />
-                <Text style={styles.titleCard}>Documentos</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </ScrollView>
-      <ActivityIndicator size="large" color="#5A66DF" animating={isLoading} />
-    </View>
+    </SafeAreaView>
   );
 };
 
