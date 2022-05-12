@@ -40,6 +40,26 @@ const CommonAreaScreen = ({navigation}) => {
       title: 'Piscina',
       icon: '../../assets/icons/commonArea/piscina.svg',
     },
+    {
+      id: '6',
+      title: 'Churrasquera',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
+    {
+      id: '7',
+      title: 'Piscina',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
+    {
+      id: '8',
+      title: 'Churrasquera',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
+    {
+      id: '9',
+      title: 'Piscina',
+      icon: '../../assets/icons/commonArea/piscina.svg',
+    },
   ];
   const OpenCommonArea = ({id, title}) => {
     return (
@@ -76,6 +96,8 @@ const CommonAreaScreen = ({navigation}) => {
           <Logo />
         </View>
         <FlatList
+          style={styles.contentList}
+          numColumns={2}
           data={DATA}
           renderItem={({item}) => (
             <OpenCommonArea id={item.id} title={item.title} />

@@ -20,6 +20,23 @@ export default StyleSheet.create({
     color: theme.SECONDARY_COLOR,
     top: -15,
   },
+  calendarHeader: {
+    display: 'flex', 
+    flexDirection: 'row', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    width: '100%'
+  },
+  iconPlus :{
+    position: 'absolute', 
+    right: '2%', 
+    bottom: '15%',
+    alignItems: 'center'
+  },
+  btnTitle: {
+    right: '5%', 
+    color: theme.COLOR_FONT_PLACEHOLDER
+  },
   currentYear: {
     color: theme.SECONDARY_COLOR,
     textAlign: 'center',

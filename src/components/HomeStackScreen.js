@@ -8,6 +8,7 @@ import NoticesScreen from '../screens/notices/NoticesScreen';
 import ViewDetailNotice from '../screens/notices/ViewDetailNotice';
 import ExpensesScreen from '../screens/expenses/ExpensesScreen';
 import ViewDetailExpenses from '../screens/expenses/ViewDetailExpenses';
+import CommonAreaReserveForm from '../screens/commonArea/commonAreaReserveForm';
 
 const HomeStack = createNativeStackNavigator();
 
@@ -20,6 +21,8 @@ const HomeStackScreen = () => {
       <HomeStack.Screen
         name="CommonAreaReserveList"
         component={CommonAreaReserveScreen}
+      />
+      <HomeStack.Screen name="CommonAreaReserveForm" component={CommonAreaReserveForm}
       />
       <HomeStack.Screen name="Notices" component={NoticesScreen} />
       <HomeStack.Screen name="DetailNotice" component={ViewDetailNotice} />

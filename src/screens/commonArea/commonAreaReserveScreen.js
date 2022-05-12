@@ -6,6 +6,7 @@ import styles from '../../styles/screens/commonArea/commonAreaReserveScreen.comp
 import IconFlech from '../../assets/icons/commonArea/icon-flecha';
 import Paid from '../../assets/icons/commonArea/dollar';
 import Pending from '../../assets/icons/commonArea/dollar_negado';
+import Add from '../../assets/icons/register/Icon_plus';
 
 const CommonAreaReserveScreen = ({route, navigation}) => {
   const {id} = route.params;
@@ -87,8 +88,13 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
           <Back style={styles.back} />
         </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
-        <View>
+        <View style={styles.calendarHeader}>
           <Text style={styles.currentYear}>2022</Text>
+          <TouchableOpacity style={styles.iconPlus} onPress={() => navigation.navigate('CommonAreaReserveForm')}>
+            <Add/>
+            <Text style={styles.btnTitle}>Reservar</Text>
+          </TouchableOpacity>
+          
         </View>
         <Agenda
           minDate="2022-01-01"

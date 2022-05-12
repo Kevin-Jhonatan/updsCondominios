@@ -43,8 +43,12 @@ export default StyleSheet.create({
   },
   containerLogo: {
     alignItems: 'center',
+    marginBottom: '5%',
   },
   titleCard: {
     color: theme.SECONDARY_COLOR,
+  },
+  contentList: { 
+    paddingHorizontal: '5%',
   },
 });
