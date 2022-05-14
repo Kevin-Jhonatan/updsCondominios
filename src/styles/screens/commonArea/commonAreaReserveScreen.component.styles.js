@@ -18,7 +18,6 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
     color: theme.SECONDARY_COLOR,
-    top: -15,
   },
   calendarHeader: {
     display: 'flex', 

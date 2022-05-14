@@ -46,12 +46,12 @@ const ViewDetailExpenses = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        {/* <TouchableOpacity onPress={() => navigation.goBack()}>
           <Back style={styles.back}/>
         </TouchableOpacity>
 
         <Text style={styles.title}>Detalle</Text>
-
+ */}
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <View>
             <View style={styles.infoContainer}>

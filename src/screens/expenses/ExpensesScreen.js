@@ -522,10 +522,10 @@ const ExpensesScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        {/* <TouchableOpacity onPress={() => navigation.goBack()}>
             <Back style={styles.back} />
         </TouchableOpacity>
-        <Text style={styles.title}>Expensas</Text>
+        <Text style={styles.title}>Expensas</Text> */}
         <View style={styles.containerLogo}>
           <Logo />
         </View>

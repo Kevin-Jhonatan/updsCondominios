@@ -84,9 +84,9 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
+        {/* <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
           <Back style={styles.back} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text style={styles.title}>{title}</Text>
         <View style={styles.calendarHeader}>
           <Text style={styles.currentYear}>2022</Text>

@@ -113,10 +113,10 @@ const DocumentScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        {/* <TouchableOpacity onPress={() => navigation.goBack()}>
           <Back style={styles.back}/>
         </TouchableOpacity>
-        <Text style={styles.title}>Documentos</Text>
+        <Text style={styles.title}>Documentos</Text> */}
         <View style={styles.containerLogo}>
           <Logo />
         </View>

@@ -88,10 +88,10 @@ const CommonAreaScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.navigate('HomeStack')}>
+        {/* <TouchableOpacity onPress={() => navigation.navigate('HomeStack')}>
           <Back style={styles.back} />
         </TouchableOpacity>
-        <Text style={styles.title}>Áreas comunes</Text>
+        <Text style={styles.title}>Áreas comunes</Text> */}
         <View style={styles.containerLogo}>
           <Logo />
         </View>

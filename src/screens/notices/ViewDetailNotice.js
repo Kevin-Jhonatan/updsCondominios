@@ -11,11 +11,11 @@ const ViewDetailNotice = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        {/* <TouchableOpacity onPress={() => navigation.goBack()}>
           <Back style={styles.back}/>
         </TouchableOpacity>
         
-        <Text style={styles.title}>Comunicado</Text>
+        <Text style={styles.title}>Comunicado</Text> */}
         <View style={styles.containerLogo}>
           <News />
         </View>

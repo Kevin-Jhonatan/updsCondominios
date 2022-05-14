@@ -22,6 +22,7 @@ export default StyleSheet.create({
   },
   containerLogo: {
     alignItems: 'center',
+    marginTop: '5%',
   },
   card: {
     flexDirection: 'row',

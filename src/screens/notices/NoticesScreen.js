@@ -107,10 +107,10 @@ const NoticesScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        {/* <TouchableOpacity onPress={() => navigation.goBack()}>
             <Back style={styles.back} />
         </TouchableOpacity>
-        <Text style={styles.title}>Comunicados</Text>
+        <Text style={styles.title}>Comunicados</Text> */}
         <View style={styles.containerLogo}>
           <Logo />
         </View>

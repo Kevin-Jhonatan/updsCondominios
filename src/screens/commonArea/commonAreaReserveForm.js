@@ -14,10 +14,10 @@ const CommonAreaReserveForm = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => navigation.navigate('CommonAreaReserveList')}>
+        {/* <TouchableOpacity onPress={() => navigation.navigate('CommonAreaReserveList')}>
           <Back style={styles.back} />
         </TouchableOpacity>
-        <Text style={styles.title}>Reservar</Text>
+        <Text style={styles.title}>Reservar</Text> */}
         <View>
           <Text>Formulario de reserva!!</Text>
         </View>
