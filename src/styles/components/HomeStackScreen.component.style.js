@@ -14,8 +14,7 @@ export default StyleSheet.create({
     paddingBottom: '2%',
   },
   iconLogout: {
-    marginLeft: '11%',
-    marginTop: '0%',
+    paddingTop: '5%',
   },
   containerTitle: {
     alignItems: 'center',
@@ -26,12 +25,19 @@ export default StyleSheet.create({
     fontSize: 20,
   },
   iconNotification: {
-    marginRight: '28%',
+    paddingTop: '0%',
   },
   titleCard: {
     textAlign: 'center',
     color: theme.SECONDARY_COLOR,
     fontSize: 15,
     fontFamily: theme.FONTFAMILY,
+  },
+  iconPlus :{
+    alignItems: 'center',
+  },
+  btnTitle: {
+    right: '5%', 
+    color: theme.COLOR_FONT_PLACEHOLDER
   },
 });

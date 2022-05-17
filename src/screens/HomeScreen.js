@@ -17,17 +17,9 @@ const HomeScreen = ({navigation}) => {
     <SafeAreaView>
       <View style={styles.container}>
         {/* <Text style={styles.welcome}>Condominios {userInfo.current_user.name}</Text> */}
-        {/* <View style={styles.header}>
-          <TouchableOpacity onPress={logout} style={styles.iconLogout}>
-            <Logout style={styles.icon} />
-            <Text style={styles.titleCard}>Salir</Text>
-          </TouchableOpacity>
           <View style={styles.containerTitle}>
-            <Text style={styles.title}>Condominios</Text>
             <Emoji />
           </View>
-          <Notification style={styles.iconNotification} />
-        </View> */}
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <View style={{paddingLeft: '5%', paddingRight: '5%'}}>
             <View style={styles.containerCard}>

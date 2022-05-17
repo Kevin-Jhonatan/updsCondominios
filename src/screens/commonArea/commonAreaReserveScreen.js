@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
 import {Agenda, LocaleConfig} from 'react-native-calendars';
 import Back from '../../assets/icons/register/Icon_back';
@@ -6,13 +6,16 @@ import styles from '../../styles/screens/commonArea/commonAreaReserveScreen.comp
 import IconFlech from '../../assets/icons/commonArea/icon-flecha';
 import Paid from '../../assets/icons/commonArea/dollar';
 import Pending from '../../assets/icons/commonArea/dollar_negado';
-import Add from '../../assets/icons/register/Icon_plus';
+import { AuthContext } from '../../context/AuthContext';
 
 const CommonAreaReserveScreen = ({route, navigation}) => {
   const {id} = route.params;
   const {title} = route.params;
 
   const [items, setItems] = useState([]);
+
+  const {setCommonArea} = useContext(AuthContext);
+  setCommonArea(title);
 
   const renderItem = item => {
     return (
@@ -84,17 +87,8 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        {/* <TouchableOpacity onPress={() => navigation.navigate('CommonArea')}>
-          <Back style={styles.back} />
-        </TouchableOpacity> */}
-        <Text style={styles.title}>{title}</Text>
         <View style={styles.calendarHeader}>
           <Text style={styles.currentYear}>2022</Text>
-          <TouchableOpacity style={styles.iconPlus} onPress={() => navigation.navigate('CommonAreaReserveForm')}>
-            <Add/>
-            <Text style={styles.btnTitle}>Reservar</Text>
-          </TouchableOpacity>
-          
         </View>
         <Agenda
           minDate="2022-01-01"

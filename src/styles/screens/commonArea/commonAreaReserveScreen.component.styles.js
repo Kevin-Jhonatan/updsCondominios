@@ -10,31 +10,12 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  back: {
-    top: 15,
-    left: 15,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 25,
-    color: theme.SECONDARY_COLOR,
-  },
   calendarHeader: {
     display: 'flex', 
     flexDirection: 'row', 
     justifyContent: 'center', 
     alignItems: 'center', 
     width: '100%'
-  },
-  iconPlus :{
-    position: 'absolute', 
-    right: '2%', 
-    bottom: '15%',
-    alignItems: 'center'
-  },
-  btnTitle: {
-    right: '5%', 
-    color: theme.COLOR_FONT_PLACEHOLDER
   },
   currentYear: {
     color: theme.SECONDARY_COLOR,

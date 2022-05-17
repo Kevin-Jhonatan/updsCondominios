@@ -10,14 +10,4 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  back: {
-    top: 15,
-    left: 15,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 25,
-    color: theme.SECONDARY_COLOR,
-    top: -15,
-  },
 });

@@ -10,6 +10,7 @@ export const AuthProvider = ({children}) => {
   const [userCondominiums, setUserCondominiums] = useState({}); 
   const [condoInfo, setCondoInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [commonArea, setCommonArea] = useState('');
 
    const register = (userName, email, pass) => {
       setIsLoading(true);
@@ -180,7 +181,9 @@ export const AuthProvider = ({children}) => {
             logout,
             openCondo,
             associateUserCondominium,
-            myCondominiums
+            myCondominiums,
+            commonArea,
+            setCommonArea
           }}>
          {children}
       </AuthContext.Provider> 

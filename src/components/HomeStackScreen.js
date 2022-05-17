@@ -12,35 +12,17 @@ import ViewDetailExpenses from '../screens/expenses/ViewDetailExpenses';
 import CommonAreaReserveForm from '../screens/commonArea/commonAreaReserveForm';
 
 import Logout from '../assets/icons/home/logout';
-import Emoji from '../assets/icons/home/emoji';
 import Notification from '../assets/icons/home/notification';
 import styles from '../styles/components/HomeStackScreen.component.style';
 import theme from '../styles/theme.style';
 import {AuthContext} from '../context/AuthContext';
+import AddiCircled from '../assets/icons/profile/add-circled'
 
 const HomeStack = createNativeStackNavigator();
 
-function HomeHeader() {
-
-  const {logout} = useContext(AuthContext);
-  return (
-    <View style={styles.header}>
-      <TouchableOpacity onPress={logout}  style={styles.iconLogout}>
-        <Logout style={styles.icon} />
-        <Text style={styles.titleCard}>Salir</Text>
-      </TouchableOpacity>
-      <View style={styles.containerTitle}>
-        <Text style={styles.title}>Condominios</Text>
-        <Emoji />
-      </View>
-      <Notification style={styles.iconNotification} />
-    </View>
-  );
-}
-
 const HomeStackScreen = ({navigation}) => {
   console.log(navigation);
-  const {logout} = useContext(AuthContext);
+  const {logout, commonArea} = useContext(AuthContext);
 
   return (
     <HomeStack.Navigator 
@@ -63,7 +45,20 @@ const HomeStackScreen = ({navigation}) => {
         }>
       <HomeStack.Screen name="HomeStack" component={HomeScreen} 
         options={{
-          headerLeft: () => (<HomeHeader/>),
+          headerLeft: () => (
+            <TouchableOpacity onPress={logout}  style={styles.iconLogout}>
+              <Logout style={styles.icon} />
+              <Text style={styles.titleCard}>Salir</Text>
+            </TouchableOpacity>
+          ),
+          title: 'Condominios',
+          headerTitleAlign: 'center',
+          headerRight:() =>(
+              <TouchableOpacity style={styles.iconNotification}
+                onPress={() => console.log('Button is Pressed!') }>
+                <Notification/>
+              </TouchableOpacity>
+          ),
         }}
       />
       <HomeStack.Screen name="Document" component={DocumentScreen} 
@@ -82,8 +77,14 @@ const HomeStackScreen = ({navigation}) => {
         name="CommonAreaReserveList"
         component={CommonAreaReserveScreen}
         options={{
-          title: '',
+          title:  commonArea,
           headerTitleAlign: 'center',
+          headerRight: () => (
+            <TouchableOpacity style={styles.iconPlus} onPress={() => navigation.navigate('CommonAreaReserveForm')}>
+              <AddiCircled/>
+              <Text style={styles.btnTitle}>Reservar</Text>
+            </TouchableOpacity>
+          )
         }}
       />
       <HomeStack.Screen name="CommonAreaReserveForm" component={CommonAreaReserveForm}
