@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import Logo from '../../assets/icons/commonArea/logo';
 import Barbecue from '../../assets/icons/home/areas-comunes';
 import SwimmingPool from '../../assets/icons/commonArea/piscina';
 import SalonOfEvent from '../../assets/icons/commonArea/salon_eventos';
-import { AuthContext } from '../../context/AuthContext';
+import {AuthContext} from '../../context/AuthContext';
 
 const CommonAreaScreen = ({navigation}) => {
   const DATA = [
@@ -31,38 +31,8 @@ const CommonAreaScreen = ({navigation}) => {
       title: 'Salon de eventos',
       icon: '../../assets/icons/commonArea/piscina.svg',
     },
-    {
-      id: '4',
-      title: 'Churrasquera',
-      icon: '../../assets/icons/commonArea/piscina.svg',
-    },
-    {
-      id: '5',
-      title: 'Piscina',
-      icon: '../../assets/icons/commonArea/piscina.svg',
-    },
-    {
-      id: '6',
-      title: 'Churrasquera',
-      icon: '../../assets/icons/commonArea/piscina.svg',
-    },
-    {
-      id: '7',
-      title: 'Piscina',
-      icon: '../../assets/icons/commonArea/piscina.svg',
-    },
-    {
-      id: '8',
-      title: 'Churrasquera',
-      icon: '../../assets/icons/commonArea/piscina.svg',
-    },
-    {
-      id: '9',
-      title: 'Piscina',
-      icon: '../../assets/icons/commonArea/piscina.svg',
-    },
   ];
-  
+
   const OpenCommonArea = ({id, title}) => {
     return (
       <View style={styles.containerCard}>

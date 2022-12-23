@@ -6,7 +6,7 @@ import styles from '../../styles/screens/commonArea/commonAreaReserveScreen.comp
 import IconFlech from '../../assets/icons/commonArea/icon-flecha';
 import Paid from '../../assets/icons/commonArea/dollar';
 import Pending from '../../assets/icons/commonArea/dollar_negado';
-import { AuthContext } from '../../context/AuthContext';
+import {AuthContext} from '../../context/AuthContext';
 
 const CommonAreaReserveScreen = ({route, navigation}) => {
   const {id} = route.params;
@@ -92,7 +92,7 @@ const CommonAreaReserveScreen = ({route, navigation}) => {
         </View>
         <Agenda
           minDate="2022-01-01"
-          maxDate="2023-01-01"
+          maxDate="2024-01-01"
           showClosingKnob={true}
           onDayChange={day => {
             console.log('día cargado', day);
